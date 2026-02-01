@@ -1,4 +1,5 @@
 policies:
-  - You have free 8 late days.
-  - You can use late days for assignments. A late day extends the deadline 24 hours.
-  - Once you have used all 8 late days, the penalty is 10% for each additional late day.
+  - You have 4 free late days for each assignment.
+  - Each late day extends the deadline by 24 hours with no penalty.
+  - You may submit one additional late day beyond the 4 free days, but it will receive only 30% of the grade (70% penalty).
+  - Submissions more than 5 days late will not be accepted.
