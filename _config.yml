@@ -6,8 +6,8 @@ course_semester: "2026"
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://dsa-spring2026.github.io/" # the base hostname & protocol for your site
 
-schoolname: "schoolname: "Azad University, Shiraz Branch"
-schoolurl: "schoolurl: "https://iaushiraz.ac.ir"
+schoolname: "schoolname: Azad University, Shiraz Branch"
+schoolurl: "schoolurl: https://iaushiraz.ac.ir"
 twitter_username: ""
 
 address: |
