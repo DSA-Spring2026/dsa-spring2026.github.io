@@ -1,21 +1,20 @@
 # Site settings
-course_name: Data Structures(DSA)
+course_name: "Data Structures (DSA)"
 course_description: "This course covers fundamental data structures, algorithmic techniques, and their applications in solving computational problems. Topics include arrays, linked lists, stacks, queues, trees, graphs, hashing, and complexity analysis."
 course_semester: "2026"
 
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "https://dsa-spring2026.github.io/" # the base hostname & protocol for your site
+baseurl: ""
+url: "https://dsa-spring2026.github.io"
 
-schoolname: "schoolname: Azad University, Shiraz Branch"
-schoolurl: "schoolurl: https://iaushiraz.ac.ir"
+schoolname: "Azad University, Shiraz Branch"
+schoolurl: "https://iaushiraz.ac.ir"
 twitter_username: ""
 
 address: |
-    School of Witchcraft and Wizardry
-    Hogwarts
-    Scotland
+  Azad University, Shiraz Branch
+  Shiraz, Iran
 
-# Set your Google Analytics tracking ID (set up yours at http://www.google.com/analytics/)
+# Google Analytics
 # google_analytics: UA-XXXXXXXX-X
 
 ### Do not change the followings unless you know what you are doing ###
@@ -33,16 +32,16 @@ exclude: ['develop']
 dateformat: "%m/%d/%Y"
 
 future: true
-collections:
-    events:
-        output: true
-    lectures:
-        output: true
-    assignments:
-        output: true
-    announcements:
-        output: false
 
+collections:
+  events:
+    output: true
+  lectures:
+    output: true
+  assignments:
+    output: true
+  announcements:
+    output: false
 
 defaults:
   - scope:
