@@ -1,7 +1,7 @@
 # Site settings
-course_name: History of Magic
-course_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare aliquam mattis. Donec hendrerit sollicitudin urna. Aliquam venenatis rutrum velit, at lobortis dui cursus a. Nam varius metus in turpis maximus, ut rhoncus tellus dictum. In aliquam tortor nec mi dapibus, sit amet vehicula dolor auctor."
-course_semester: "Fall 1998"
+course_name: Data Structures(DSA)
+course_description: "This course covers fundamental data structures, algorithmic techniques, and their applications in solving computational problems. Topics include arrays, linked lists, stacks, queues, trees, graphs, hashing, and complexity analysis."
+course_semester: "2026"
 
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://dsa-spring2026.github.io/" # the base hostname & protocol for your site
