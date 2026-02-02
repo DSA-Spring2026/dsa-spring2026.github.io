@@ -4,9 +4,9 @@ instructors:
     webpage: ""
 
 teaching_assistants:
-  - name: ""
-    profile_pic: ""
-    webpage: ""
+  - name: "Hamid Namjoo"
+    profile_pic: "/_images/pp/Hamid_Namjoo.jpg"
+    webpage: "https://www.linkedin.com/in/hamid-namjoo/"
 
   - name: ""
     profile_pic: ""
@@ -43,3 +43,15 @@ teaching_assistants:
   - name: "Mehdi Torabi"
     profile_pic: ""
     webpage: "mailto:torabim404@gmail.com"
+
+  - name: "Alireza Heydari"
+    profile_pic: ""
+    webpage: "mailto:alirezaheydaricod@gmail.com"
+
+  - name: ""
+    profile_pic: ""
+    webpage: ""
+
+  - name: ""
+    profile_pic: ""
+    webpage: ""
