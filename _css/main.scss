@@ -60,3 +60,32 @@ $on-laptop:        950px;
 	    "fancy-image"
 ;
 
+
+/* --- اضافه شده برای اصلاح چیدمان پروفایل‌ها --- */
+
+.profile-grid {
+  display: grid;
+  /* این خط باعث می‌شود تعداد ستون‌ها بر اساس عرض صفحه تنظیم شود */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px; /* فاصله بین آیتم‌ها */
+  justify-items: center; /* وسط‌چین کردن محتوا */
+  align-items: start; /* تراز کردن از بالا (جلوگیری از گیر کردن) */
+  margin-top: 20px;
+}
+
+.profile-grid .profile-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.profile-grid img {
+  width: 150px;       /* عرض ثابت */
+  height: 150px;      /* ارتفاع ثابت (بسیار مهم برای نظم) */
+  object-fit: cover;  /* جلوگیری از دفرمه شدن عکس */
+  border-radius: 50%; /* اگر می‌خواهید عکس‌ها گرد باشند */
+  margin-bottom: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* سایه ملایم */
+}
