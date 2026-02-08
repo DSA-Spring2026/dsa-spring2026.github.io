@@ -28,6 +28,10 @@ teaching_assistants:
     profile_pic: "/_images/pp/Janfaza.jpg"
     webpage: "https://www.linkedin.com/in/armin-janfaza" 
     
+  - name: "Alireza Heydari"
+    profile_pic: "/_images/pp/Heydari.jpg"
+    webpage: "https://github.com/Dayancodebro"
+  
   - name: "Abolfazl Tadrisi"
     profile_pic: ""
     webpage: ""
@@ -51,10 +55,6 @@ teaching_assistants:
   - name: "Mehdi Torabi"
     profile_pic: ""
     webpage: "mailto:torabim404@gmail.com"
-
-  - name: "Alireza Heydari"
-    profile_pic: "/_images/pp/Heydari.jpg"
-    webpage: "https://github.com/Dayancodebro"
 
   - name: ""
     profile_pic: ""
