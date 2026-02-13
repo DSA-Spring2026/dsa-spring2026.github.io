@@ -227,80 +227,74 @@ z-index:999;
 }
 
 /* ===========================================
-   FINAL FIX — PERFECT HEADER ALIGNMENT
+   FINAL FIX — CENTERED MENU & LOWERED
    =========================================== */
 @media (min-width: 900px) {
 
-  /* تنظیمات کلی هدر */
   .site-header {
-    min-height: 130px; /* ارتفاع هدر */
+    min-height: 130px;
     display: flex;
-    align-items: center; /* مهم: این دستور همه چیز را عمودی وسط‌چین می‌کند */
+    align-items: center;
     justify-content: center;
-    border-top: 0; /* اگر بوردر بالا مزاحم است */
+    position: relative;
   }
 
-  /* Wrapper باید تمام عرض را بگیرد و آیتم‌ها را پخش کند */
   .site-header .wrapper {
     display: flex;
-    align-items: center; /* وسط‌چین کردن عمودی محتویات داخل wrapper */
-    justify-content: space-between; /* لوگو سمت چپ، منو سمت راست (یا وسط) */
+    align-items: center;
+    justify-content: space-between; /* لوگو را سمت چپ نگه می‌دارد */
     width: 100%;
-    max-width: calc(100% - 40px); /* کمی فاصله از بغل‌ها */
     height: 100%;
-    padding: 0 !important; /* حذف پدینگ‌های مزاحم که باعث پایین رفتن می‌شدند */
-    margin: 0 auto;
+    padding: 0 40px; /* کمی فاصله از کناره‌های صفحه */
+    position: relative; /* حیاتی برای وسط‌چین کردن منو */
   }
 
-  /* لوگو و عنوان (سمت چپ) */
-  /* فرض بر این است که لوگوی شما داخل یک table یا div سمت چپ است */
+  /* --- تنظیمات لوگو (سمت چپ) --- */
   .site-header .wrapper > table,
   .site-title {
     float: none !important;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    margin: 0 !important; /* حذف مارجین‌های اضافی */
-  }
-  
-  .site-header .wrapper > table td {
-      vertical-align: middle;
+    z-index: 10; /* مطمئن می‌شویم لوگو زیر منو نرود */
   }
 
-  /* منو (سمت راست/وسط) */
+  /* --- تنظیمات منو (دقیقاً وسط و کمی پایین) --- */
   .site-nav {
     float: none !important;
-    display: flex;
-    align-items: center; /* وسط‌چین عمودی خود کانتینر منو */
-    line-height: normal; /* ریست کردن لاین-هیت برای جلوگیری از به‌هم ریختگی */
-    margin-top: 0 !important; /* حذف فاصله‌های اضافی */
-  }
-
-  /* اصلاح لیست منو برای حذف پرش به پایین */
-  .site-nav ul {
-    display: flex !important;
-    align-items: center !important; /* وسط‌چین عمودی آیتم‌های لیست */
-    justify-content: flex-end; /* آیتم‌ها کنار هم */
-    gap: 32px; /* فاصله بین دکمه‌های منو */
-    margin: 0 !important;
-    padding: 0 !important; /* بسیار مهم: حذف اون 9px پدینگ که همه چی رو خراب میکرد */
-    float: none !important;
-  }
-
-  /* اصلاح آیتم‌های تکی منو */
-  .site-nav .menu > li {
+    
+    /* جادوی وسط‌چین کردن مطلق */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* دقیقاً مرکز صفحه فیکس می‌شود */
+    
+    /* تنظیم ارتفاع و پایین آوردن */
+    top: 50%; /* شروع از وسط عمودی */
+    margin-top: 25px; /* <<--- این عدد را زیاد کن تا منو پایین‌تر بیاید */
+    
     display: flex;
     align-items: center;
     justify-content: center;
-    height: auto; /* ارتفاع فیکس نباشد تا با فلکس هماهنگ شود */
-    margin: 0 !important; /* بسیار مهم: حذف اون 12px مارجین بالا */
+    z-index: 20;
+  }
+
+  .site-nav ul {
+    display: flex !important;
+    align-items: center;
+    gap: 30px; /* فاصله بین کلمات منو */
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none;
+  }
+
+  .site-nav .menu > li {
+    display: block;
+    margin: 0 !important;
     padding: 0 !important;
     border: none;
-    float: none;
   }
-  
+
   .site-nav a {
-      display: flex;
-      align-items: center;
+    display: block;
+    line-height: normal;
   }
 }
