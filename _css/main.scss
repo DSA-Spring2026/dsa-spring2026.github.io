@@ -47,21 +47,31 @@ $on-laptop:        950px;
         "fancy-image"
 ;
 
-// ===============================
-// Custom styles for staff pyramid
-// ===============================
+/* ===============================
+   Staff pyramid layout
+   =============================== */
+
 .staff-grid {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 40px;
+}
+
+.role-title {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  font-size: 1.6em;
+  font-weight: 700;
+  text-align: center;
+  color: #333;
 }
 
 .staff-row {
   display: flex;
   justify-content: center;
   gap: 25px;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 .staff-row.single .person {
@@ -79,6 +89,7 @@ $on-laptop:        950px;
 
 .person {
   text-align: center;
+  max-width: 150px;
 }
 
 .image--cover {
@@ -86,4 +97,27 @@ $on-laptop:        950px;
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
+  border: 3px solid #ccc;
+  transition: transform 0.3s ease;
+}
+
+.image--cover:hover {
+  transform: scale(1.05);
+  border-color: #666;
+}
+
+.person p {
+  margin-top: 8px;
+  font-size: 0.95em;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .image--cover {
+    width: 90px;
+    height: 90px;
+  }
+  .person {
+    max-width: 120px;
+  }
 }
