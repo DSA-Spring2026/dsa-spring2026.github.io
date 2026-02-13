@@ -48,59 +48,35 @@ $on-laptop:        950px;
         "fancy-image"
 ;
 
-/* ==========================================================================
-   FORCE CENTER NAVIGATION (بازنویسی کامل برای اجبار به وسط‌چین شدن)
-   ========================================================================== */
+/* --- کد نهایی برای وسط‌چین کردن منوی اختصاصی شما --- */
 
-.site-header {
-  text-align: center;
-  display: flex;
-  flex-direction: column; /* المان‌ها را زیر هم می‌چیند: اول عنوان، بعد منو */
-  align-items: center;    /* وسط‌چین کردن عمودی */
-  justify-content: center;
-  padding: 20px 0;
+.menu {
+    display: flex !important;       /* استفاده از فلکس‌باکس برای چیدمان خطی */
+    justify-content: center !important; /* انتقال کل منو به مرکز صفحه */
+    list-style: none !important;    /* حذف نقطه‌های لیست */
+    padding: 0 !important;
+    margin: 20px 0 !important;      /* فاصله عمودی منو */
+    flex-wrap: wrap !important;     /* در صورت کمبود جا، آیتم‌ها به خط بعد بروند */
+    gap: 25px;                      /* فاصله بین گزینه‌ها */
 }
 
-.wrapper {
-  max-width: $content-width;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.site-nav {
-  position: static !important; /* حذف پوزیشن‌های احتمالی که مانع وسط‌چین شدن هستند */
-  float: none !important;
-  display: inline-block !important;
-  margin: 10px auto !important;
-  width: auto !important;
-
-  .trigger {
-    display: flex !important;
-    justify-content: center !important;
-    float: none !important;
-    margin: 0 auto !important;
-    gap: 20px; /* فاصله بین آیتم‌ها */
-  }
-
-  .page-link {
-    display: inline-block;
-    float: none !important;
+.menu li {
+    display: inline-block !important; /* اطمینان از کنار هم قرار گرفتن */
     margin: 0 !important;
-    padding: 5px 10px;
-  }
-
-  /* مخفی کردن آیکون همبرگری در دسکتاپ اگر باعث جابه‌جایی می‌شود */
-  .menu-icon {
-    display: none;
-  }
 }
 
-/* برای اطمینان از اینکه در موبایل هم درست نمایش داده شود */
-@include media-query($on-palm) {
-  .site-nav {
-    .trigger {
-      flex-direction: column; /* در موبایل آیتم‌ها زیر هم بروند */
-      gap: 5px;
+.menu li a {
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px; /* فاصله بین آیکون و متن */
+    font-weight: bold;
+}
+
+/* برای موبایل که گزینه‌ها زیر هم قرار نگیرند و مرتب باشند */
+@media screen and (max-width: 600px) {
+    .menu {
+        gap: 15px;
+        justify-content: center;
     }
-  }
 }
