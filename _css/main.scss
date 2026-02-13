@@ -43,9 +43,9 @@ $on-laptop:        950px;
 //     }
 // }
 @mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+    @media screen and (max-width: $device) {
+        @content; // در واقع در برخی نسخه‌ها کلا این خط نباید تهش علامت داشته باشد یا بلوک محتوا بگیرد
+    }
 }
 
 
