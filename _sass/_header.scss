@@ -227,49 +227,59 @@ z-index:999;
 }
 
 /* ===========================================
-   PERFECT CENTERED NAVIGATION (DESKTOP ONLY)
+   FINAL FIX — PERFECT HEADER ALIGNMENT
    =========================================== */
 @media (min-width: 900px) {
 
-  /* کل wrapper را Flex می‌کنیم */
+  /* کل هدر */
+  .site-header {
+    min-height: 130px; /* ارتفاع کافی برای وسط‌چین واقعی */
+    display: flex;
+    align-items: center;
+  }
+
+  /* wrapper را flex می‌کنیم */
   .site-header .wrapper {
     display: flex;
     align-items: center;        /* عمودی وسط */
     justify-content: space-between;
     width: 100%;
-    min-height: 110px;          /* ارتفاع کافی برای وسط‌چین واقعی */
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
+    height: 100%;
+    padding: 0 !important;
   }
 
-  /* لوگو + عنوان درس (table) */
+  /* لوگو + عنوان درس (table) را از حالت table خارج می‌کنیم */
   .site-header .wrapper > table {
-    display: flex;              /* تبدیل table به flex */
-    align-items: center;        /* عمودی وسط */
-    margin: 0;
-    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .site-header .wrapper > table td {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   /* منو */
   .site-nav {
     float: none !important;
-    margin: 0 auto;             /* افقی وسط */
     display: flex;
-    align-items: center;        /* عمودی وسط */
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
   }
 
   .site-nav ul {
-    float: none !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 32px;                  /* فاصله بهتر */
+    gap: 32px;
     margin: 0;
     padding: 0;
   }
 
   .site-nav .menu > li {
-    float: none !important;
     display: flex;
     align-items: center;
     justify-content: center;
