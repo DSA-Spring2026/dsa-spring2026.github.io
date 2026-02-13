@@ -25,44 +25,34 @@ layout: default
 
     <br>
 
-    <!-- بخش هرمی -->
+    <!-- ساختار هرمی -->
     <div class="staff-grid">
 
         <!-- استاد -->
-        <div class="staff-row">
-            <h2>Instructor</h2>
+        <div class="staff-row single">
             {% for ins in site.data.people.instructors %}
-            <div class="image--cover-container">
+            <div class="person">
                 <img src="{{ins.profile_pic | prepend: site.baseurl }}" class="image--cover">
-                {% if ins.webpage %}
                 <p><a href="{{ ins.webpage }}">{{ins.name}}</a></p>
-                {% else %}
-                <p>{{ins.name}}</p>
-                {% endif %}
             </div>
             {% endfor %}
         </div>
 
         <!-- Head TA -->
-        <div class="staff-row">
-            <h2>Head Teaching Assistants</h2>
+        <div class="staff-row double">
             {% for head in site.data.people.head_teaching_assistants %}
-            <div class="image--cover-container">
+            <div class="person">
                 <img src="{{head.profile_pic | prepend: site.baseurl }}" class="image--cover">
-                {% if head.webpage %}
                 <p><a href="{{ head.webpage }}">{{head.name}}</a></p>
-                {% else %}
-                <p>{{head.name}}</p>
-                {% endif %}
             </div>
             {% endfor %}
         </div>
 
         <!-- TAها -->
-        <div class="staff-row">
-            <h2>Teaching Assistants</h2>
-            {% for ta in site.data.people.teaching_assistants %}
-            <div class="image--cover-container">
+        <div class="staff-row triple">
+            {% assign tas = site.data.people.teaching_assistants %}
+            {% for ta in tas %}
+            <div class="person">
                 <img src="{{ta.profile_pic | prepend: site.baseurl }}" class="image--cover">
                 {% if ta.webpage %}
                 <p><a href="{{ ta.webpage }}">{{ta.name}}</a></p>
