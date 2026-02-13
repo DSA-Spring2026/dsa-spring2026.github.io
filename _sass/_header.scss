@@ -3,80 +3,76 @@
  */
 .site-header {
     border-top: 0px solid $grey-color-dark;
-	border-bottom: 6px solid $clemson-orange;
+    border-bottom: 6px solid $clemson-orange;
     min-height: 56px;
     background-color: $clemson-purple;
-    // Positioning context for the mobile navigation icon
     position: relative;
 }
 
-.header-texture {
-    opacity: $header-background-opacity;
-    filter: invert($header-background-invert);
+/* ۱. اصلاح ظرف اصلی برای وسط‌چین کردن همه محتوا */
+.site-header .wrapper {
+    padding-top: 20px;
+    display: flex !important;
+    flex-direction: column !important; /* لوگو بالا، منو پایین */
+    align-items: center !important;    /* وسط‌چین کردن افقی */
+    text-align: center !important;
 }
 
+/* ۲. اصلاح عنوان سایت (لوگو) */
 .site-title, .site-title a {
     font-size: 26px;
-/* 		margin-top: 15px;
-    line-height: 40px; */
     letter-spacing: -1px;
-    margin-bottom: 0;
-    float: left;
+    margin-bottom: 10px !important;
+    float: none !important; /* حذف شناوری به چپ */
+    display: inline-block !important;
     font-weight: 500;
-		font-family: 'Titillium Web', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
     color: $header-text-color;
-    &,
-    &:visited {
-        color: $header-text-color;
+}
+
+/* ۳. اصلاح بخش ناوبری اصلی */
+.site-nav {
+    float: none !important; /* حذف شناوری به راست */
+    line-height: normal !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+
+    /* ۴. اصلاح لیست منو */
+    ul {
+        text-align: center !important; /* وسط‌چین کردن متن */
+        float: none !important;       /* حذف شناوری */
+        display: flex !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        list-style-type: none;
+        text-transform: uppercase;
+        font-family: 'Titillium Web', sans-serif;
     }
-    &,
-    &:hover {
-	text-decoration: none;
-}
 }
 
-.site-header .wrapper {
-	padding-top: 20px;
-	position: relative;
-}
-
-.site-nav ul li a {
-	color: $header-text-color;
-}
-
-.site-nav ul {
-
-	text-align: right;
-	float: right;
-	padding-top: 9px;
-	font-size: 85%;
-	letter-spacing: 1px;
-	line-height: 1em;
-	font-weight: 600;
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-	text-transform: uppercase;
-		font-family: 'Titillium Web', sans-serif;
-
-}
-
+/* ۵. اصلاح آیتم‌های منو */
 .site-nav .menu > li {
-	border-bottom: 3px solid transparent;
-	display: inline-block;
-	height: 23px;
-	line-height: normal;
-	margin: 12px 0 0 20px;
-	padding: 0 0 2px 0;
-	position: relative;
-	vertical-align: top;
+    border-bottom: 3px solid transparent;
+    display: inline-block !important;
+    height: auto !important;
+    line-height: normal;
+    margin: 10px 15px !important; /* فاصله منظم بین گزینه‌ها */
+    padding: 0 0 2px 0;
+    position: relative;
+    vertical-align: top;
+    float: none !important; /* اطمینان از عدم شناوری */
 }
 
+/* تنظیم آیکون‌ها و متن داخل لینک‌ها */
 .site-nav a {
-	display: block;
-        color: $header-text-color;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px;
+    color: $header-text-color;
+    text-decoration: none;
 }
-
 /* Sub Menu */
 
 .site-nav .sub-menu a {
