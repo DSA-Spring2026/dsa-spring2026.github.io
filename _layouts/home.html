@@ -29,6 +29,7 @@ layout: default
     <div class="staff-grid">
 
         <!-- استاد -->
+        <h2 class="role-title">Instructor</h2>
         <div class="staff-row single">
             {% for ins in site.data.people.instructors %}
             <div class="person">
@@ -38,12 +39,12 @@ layout: default
                 {% else %}
                 <p>{{ins.name}}</p>
                 {% endif %}
-                <p class="role">Instructor</p>
             </div>
             {% endfor %}
         </div>
 
         <!-- Head TA -->
+        <h2 class="role-title">Head Teaching Assistants</h2>
         <div class="staff-row double">
             {% for head in site.data.people.head_teaching_assistants %}
             <div class="person">
@@ -53,12 +54,12 @@ layout: default
                 {% else %}
                 <p>{{head.name}}</p>
                 {% endif %}
-                <p class="role">Head TA</p>
             </div>
             {% endfor %}
         </div>
 
         <!-- TAها -->
+        <h2 class="role-title">Teaching Assistants</h2>
         <div class="staff-row triple">
             {% for ta in site.data.people.teaching_assistants %}
             <div class="person">
@@ -68,7 +69,6 @@ layout: default
                 {% else %}
                 <p>{{ta.name}}</p>
                 {% endif %}
-                <p class="role">Teaching Assistant</p>
             </div>
             {% endfor %}
         </div>
