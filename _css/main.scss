@@ -8,84 +8,66 @@ $header-background-invert: 0%;
 
 // Our variables
 $base-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-$base-font-size:   .95em;
-$small-font-size:  $base-font-size * 0.875;
+$base-font-size:   .95em;
+$small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
-$spacing-unit:     30px;
+$spacing-unit:     30px;
 
-$text-color:       #111;
+$text-color:       #111;
 $background-color: #fdfdfd;
-$brand-color:      $primary-color;
-// $gameday-sky: #109dc0;
-$clemson-purple:      $header-color;
-$clemson-orange:      $accent-color;
+$brand-color:      $primary-color;
+$clemson-purple:   $header-color;
+$clemson-orange:   $accent-color;
 
-
-$grey-color:       #828282;
+$grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
+$grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
-$content-width:    950px;
+$content-width:    950px;
+$on-palm:          600px;
+$on-laptop:        950px;
 
-$on-palm:          600px;
-$on-laptop:        950px;
-
-
-
-// Using media queries with like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
+// Media query mixin
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
-        @content; // در واقع در برخی نسخه‌ها کلا این خط نباید تهش علامت داشته باشد یا بلوک محتوا بگیرد
+        @content;
     }
 }
 
-
-
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "header",
-	    "mobile-header",
-        "base",
-        "layout",
-        "syntax-highlighting",
-	    "fancy-image"
-;
-
+// Import partials (پاک‌سازی شده برای رفع خطای بیلد)
+@import "header";
+@import "mobile-header";
+@import "base";
+@import "layout";
+@import "syntax-highlighting";
+@import "fancy-image";
 
 /* --- اضافه شده برای اصلاح چیدمان پروفایل‌ها --- */
 
 .profile-grid {
-  display: grid;
-  /* این خط باعث می‌شود تعداد ستون‌ها بر اساس عرض صفحه تنظیم شود */
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 30px; /* فاصله بین آیتم‌ها */
-  justify-items: center; /* وسط‌چین کردن محتوا */
-  align-items: start; /* تراز کردن از بالا (جلوگیری از گیر کردن) */
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: start;
+  margin-top: 20px;
 }
 
 .profile-grid .profile-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .profile-grid img {
-  width: 150px;       /* عرض ثابت */
-  height: 150px;      /* ارتفاع ثابت (بسیار مهم برای نظم) */
-  object-fit: cover;  /* جلوگیری از دفرمه شدن عکس */
-  border-radius: 50%; /* اگر می‌خواهید عکس‌ها گرد باشند */
-  margin-bottom: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* سایه ملایم */
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
