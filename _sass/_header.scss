@@ -237,14 +237,17 @@ z-index:999;
     align-items: center;        /* عمودی وسط */
     justify-content: space-between;
     width: 100%;
-    min-height: 90px;           /* ارتفاع استاندارد */
+    min-height: 110px;          /* ارتفاع کافی برای وسط‌چین واقعی */
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   /* لوگو + عنوان درس (table) */
   .site-header .wrapper > table {
+    display: flex;              /* تبدیل table به flex */
+    align-items: center;        /* عمودی وسط */
     margin: 0;
     padding: 0;
-    display: block;             /* اجازه می‌دهد flex درست کار کند */
   }
 
   /* منو */
@@ -260,7 +263,7 @@ z-index:999;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    gap: 28px;
+    gap: 32px;                  /* فاصله بهتر */
     margin: 0;
     padding: 0;
   }
@@ -273,7 +276,7 @@ z-index:999;
     margin: 0;
   }
 
-  /* عنوان درس (site-title) از float خارج شود */
+  /* عنوان درس از float خارج شود */
   .site-title {
     float: none !important;
   }
