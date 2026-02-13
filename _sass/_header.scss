@@ -1,6 +1,7 @@
 /**
- * Site header
+ * Site header - Desktop Version Only
  */
+
 .site-header {
     border-top: 0px solid $grey-color-dark;
     border-bottom: 6px solid $clemson-orange;
@@ -9,142 +10,124 @@
     position: relative;
 }
 
-/* ۱. اصلاح ظرف اصلی برای وسط‌چین کردن همه محتوا */
-.site-header .wrapper {
-    padding-top: 20px;
-    display: flex !important;
-    flex-direction: column !important; /* لوگو بالا، منو پایین */
-    align-items: center !important;    /* وسط‌چین کردن افقی */
-    text-align: center !important;
+.header-texture {
+    opacity: $header-background-opacity;
+    filter: invert($header-background-invert);
 }
 
-/* ۲. اصلاح عنوان سایت (لوگو) */
-.site-title, .site-title a {
-    font-size: 26px;
-    letter-spacing: -1px;
-    margin-bottom: 10px !important;
-    float: none !important; /* حذف شناوری به چپ */
-    display: inline-block !important;
-    font-weight: 500;
-    font-family: 'Titillium Web', sans-serif;
-    color: $header-text-color;
-}
+/* اعمال تغییرات فقط برای نمایشگرهای بزرگ (Desktop) */
+@media screen and (min-width: 601px) {
 
-/* ۳. اصلاح بخش ناوبری اصلی */
-.site-nav {
-    float: none !important; /* حذف شناوری به راست */
-    line-height: normal !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-
-    /* ۴. اصلاح لیست منو */
-    ul {
-        text-align: center !important; /* وسط‌چین کردن متن */
-        float: none !important;       /* حذف شناوری */
+    .site-header .wrapper {
+        padding-top: 20px;
         display: flex !important;
-        justify-content: center !important;
-        flex-wrap: wrap !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        list-style-type: none;
-        text-transform: uppercase;
+        flex-direction: column !important; /* چیدمان ستونی: لوگو بالا، منو پایین */
+        align-items: center !important;    /* وسط‌چین کردن افقی */
+        text-align: center !important;
+        position: relative;
+        float: none !important;
+        margin: 0 auto !important;
+    }
+
+    /* تنظیم لوگو و عنوان سایت */
+    .site-title, .site-title a {
+        font-size: 26px;
+        letter-spacing: -1px;
+        margin-bottom: 15px !important;
+        float: none !important; /* حذف شناوری به چپ */
+        display: inline-block !important;
+        font-weight: 500;
         font-family: 'Titillium Web', sans-serif;
+        color: $header-text-color;
+        
+        &:visited { color: $header-text-color; }
+        &:hover { text-decoration: none; }
+    }
+
+    /* تنظیم بخش ناوبری اصلی */
+    .site-nav {
+        float: none !important; /* حذف شناوری به راست */
+        width: 100% !important;
+        margin: 0 auto !important;
+        line-height: normal !important;
+        display: block !important;
+
+        /* تنظیم لیست منو */
+        .menu {
+            display: flex !important;
+            justify-content: center !important; /* قرار دادن آیتم‌ها در مرکز */
+            flex-wrap: wrap !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            list-style: none !important;
+            text-align: center !important;
+            text-transform: uppercase;
+            font-family: 'Titillium Web', sans-serif;
+            font-size: 85%;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* آیتم‌های داخل منو */
+        .menu > li {
+            border-bottom: 3px solid transparent;
+            display: inline-block !important;
+            margin: 0 15px !important; /* فاصله بین گزینه‌ها */
+            padding: 0 0 5px 0;
+            position: relative;
+            float: none !important;
+        }
+
+        a {
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px;
+            color: $header-text-color;
+            text-decoration: none;
+        }
+    }
+
+    /* تنظیم زیرمنوها برای حالت وسط‌چین */
+    .sub-menu {
+        border: 3px solid transparent;
+        box-shadow: 0 2px 2px rgba(0,0,0,0.4);
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%); /* تراز کردن زیرمنو نسبت به مرکز والد */
+        background: #ffffff;
+        min-width: 200px;
+        z-index: 999;
+        padding: 5px 0;
+        
+        li {
+            display: block;
+            margin: 0;
+            text-align: left;
+            a {
+                color: $title-color !important;
+                padding: 8px 15px;
+                font-weight: normal;
+                &:hover { color: $clemson-purple !important; }
+            }
+        }
+    }
+
+    .site-nav li:hover > .sub-menu {
+        display: block;
     }
 }
 
-/* ۵. اصلاح آیتم‌های منو */
-.site-nav .menu > li {
-    border-bottom: 3px solid transparent;
-    display: inline-block !important;
-    height: auto !important;
-    line-height: normal;
-    margin: 10px 15px !important; /* فاصله منظم بین گزینه‌ها */
-    padding: 0 0 2px 0;
-    position: relative;
-    vertical-align: top;
-    float: none !important; /* اطمینان از عدم شناوری */
-}
+/* استایل‌های عمومی متن هدر */
+.schoolname { color: $header-text-color; }
+.coursesemeter { color: $header-text-color; opacity: 0.9; }
 
-/* تنظیم آیکون‌ها و متن داخل لینک‌ها */
-.site-nav a {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px;
-    color: $header-text-color;
-    text-decoration: none;
-}
-/* Sub Menu */
-
-.site-nav .sub-menu a {
-	display: block;
-	font-weight: normal;
-	height: auto;
-	letter-spacing: 0;
-	line-height: 1.2em;
-	padding: 4px 10px;
-color: $title-color;
-
-}
-
-.site-nav .sub-menu a:hover {
-	color: $clemson-purple;
-}
-.site-nav  .sub-menu {
-	background: #ffffff;
-	border-color: $clemson-purple;
-	min-width: 265px;
-
-	z-index:2147483647;
-}
-.site-nav .sub-menu li.current-menu-item > a {
-	border-left-color: $clemson-purple;
-	border-right-color: $clemson-purple;
-	border-right: 0px;
-
-}
-
-
-.sub-menu {
-	border: 3px solid transparent;
-	border-top: 0;
-	/* bg and border colors set in header */
-	box-shadow: 0 2px 2px rgba(0,0,0,0.4);
-	-moz-box-shadow: 0 2px 2px rgba(0,0,0,0.4);
-	-webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.4);
-	display: none;
-	right: -10px;
-	padding: 4px 0 3px 0;
-	position: absolute;
-	text-align: left;
-	text-transform: none;
-	top: 28px;
-	min-width: 265px;
-
-z-index:999;
-	font-family: Helvetica, Arial, Verdana, sans-serif;
-
-}
-
-.sub-menu li {
-	border-bottom: 0;
-	display: block;
-	height: auto;
-	margin: 3px 0;
-	padding: 0;
-	text-align: left;
-}
-
-.site-nav li:hover > .sub-menu {
-	display: block;
-}
-
-
-
+/* پنهان کردن عنوان پنهان ناوبری */
 .site-nav h1 {
-	position: absolute;
-	left: -999em;
+    position: absolute;
+    left: -999em;
 }
-
 
 .site-nav {
     float: right;
