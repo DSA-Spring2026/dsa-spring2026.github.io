@@ -46,23 +46,6 @@ $on-laptop:        950px;
 
 /* --- اضافه شده برای اصلاح چیدمان پروفایل‌ها --- */
 
-.profile-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 30px;
-  justify-items: center;
-  align-items: start;
-  margin-top: 20px;
-}
-
-.profile-grid .profile-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-}
-
 .profile-grid img {
   width: 150px;
   height: 150px;
