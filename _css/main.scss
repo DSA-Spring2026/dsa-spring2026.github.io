@@ -49,62 +49,58 @@ $on-laptop:        950px;
 ;
 
 /* ==========================================================================
-   تغییرات جدید برای وسط‌چین کردن منو (Navigation)
+   FORCE CENTER NAVIGATION (بازنویسی کامل برای اجبار به وسط‌چین شدن)
    ========================================================================== */
 
-.site-nav {
-  float: none !important;     /* حذف چسبندگی به سمت راست/چپ */
-  text-align: center !important; 
-  width: 100%;
+.site-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* المان‌ها را زیر هم می‌چیند: اول عنوان، بعد منو */
+  align-items: center;    /* وسط‌چین کردن عمودی */
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.wrapper {
+  max-width: $content-width;
   margin: 0 auto;
-  display: block;
+  width: 100%;
+}
+
+.site-nav {
+  position: static !important; /* حذف پوزیشن‌های احتمالی که مانع وسط‌چین شدن هستند */
+  float: none !important;
+  display: inline-block !important;
+  margin: 10px auto !important;
+  width: auto !important;
 
   .trigger {
-    display: flex;
-    justify-content: center;  /* المان‌ها را در مرکز افقی قرار می‌دهد */
-    align-items: center;
-    flex-wrap: wrap;          /* در صورت کمبود جا، منو را به خط بعد می‌برد */
-    gap: 20px;                /* فاصله بین گزینه‌های منو */
+    display: flex !important;
+    justify-content: center !important;
     float: none !important;
+    margin: 0 auto !important;
+    gap: 20px; /* فاصله بین آیتم‌ها */
   }
 
   .page-link {
-    margin-left: 0 !important; /* حذف فاصله‌های پیش‌فرض که باعث عدم تقارن می‌شود */
+    display: inline-block;
+    float: none !important;
+    margin: 0 !important;
+    padding: 5px 10px;
+  }
+
+  /* مخفی کردن آیکون همبرگری در دسکتاپ اگر باعث جابه‌جایی می‌شود */
+  .menu-icon {
+    display: none;
   }
 }
 
-/* اصلاح چیدمان لوگو/عنوان سایت برای جلوگیری از تداخل */
-.site-title {
-  float: none !important;
-  display: block;
-  text-align: center;
-  margin: 0 auto 10px;
-}
-
-/* --- بخش پروفایل‌ها (کد قبلی شما) --- */
-
-.profile-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 30px;
-  justify-items: center;
-  align-items: start;
-  margin-top: 20px;
-}
-
-.profile-grid .profile-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-}
-
-.profile-grid img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+/* برای اطمینان از اینکه در موبایل هم درست نمایش داده شود */
+@include media-query($on-palm) {
+  .site-nav {
+    .trigger {
+      flex-direction: column; /* در موبایل آیتم‌ها زیر هم بروند */
+      gap: 5px;
+    }
+  }
 }
