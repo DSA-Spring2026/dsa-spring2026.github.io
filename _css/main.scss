@@ -20,15 +20,12 @@ $brand-color:      $primary-color;
 $clemson-purple:      $header-color;
 $clemson-orange:      $accent-color;
 
-
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
-
 // Width of the content area
 $content-width:    950px;
-
 $on-palm:          600px;
 $on-laptop:        950px;
 
@@ -48,35 +45,87 @@ $on-laptop:        950px;
         "fancy-image"
 ;
 
-/* --- کد نهایی برای وسط‌چین کردن منوی اختصاصی شما --- */
+/* ==========================================================================
+   بخش اول: وسط‌چین کردن قطعی هدر و منو
+   ========================================================================== */
 
+// ۱. مجبور کردن کل هدر به چیدمان عمودی و مرکزی
+.site-header .wrapper {
+    display: flex !important;
+    flex-direction: column !important; 
+    align-items: center !important;    
+    text-align: center !important;
+    max-width: $content-width;
+    margin: 0 auto;
+}
+
+// ۲. تنظیمات لوگو و عنوان (آزاد کردن از حالت شناور)
+.site-title {
+    float: none !important;
+    margin: 0 0 15px 0 !important;
+    display: inline-block !important;
+}
+
+// ۳. تنظیمات اختصاصی کلاس .menu که فرستادید
 .menu {
-    display: flex !important;       /* استفاده از فلکس‌باکس برای چیدمان خطی */
-    justify-content: center !important; /* انتقال کل منو به مرکز صفحه */
-    list-style: none !important;    /* حذف نقطه‌های لیست */
+    float: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    list-style: none !important;
     padding: 0 !important;
-    margin: 20px 0 !important;      /* فاصله عمودی منو */
-    flex-wrap: wrap !important;     /* در صورت کمبود جا، آیتم‌ها به خط بعد بروند */
-    gap: 25px;                      /* فاصله بین گزینه‌ها */
+    margin: 0 auto !important;
+    flex-wrap: wrap !important;
+    gap: 20px; /* فاصله بین آیتم‌های منو */
 }
 
 .menu li {
-    display: inline-block !important; /* اطمینان از کنار هم قرار گرفتن */
+    float: none !important;
+    display: inline-block !important;
     margin: 0 !important;
 }
 
 .menu li a {
-    text-decoration: none !important;
     display: flex !important;
     align-items: center !important;
-    gap: 8px; /* فاصله بین آیکون و متن */
-    font-weight: bold;
+    gap: 8px;
+    text-decoration: none !important;
+    padding: 5px 10px;
 }
 
-/* برای موبایل که گزینه‌ها زیر هم قرار نگیرند و مرتب باشند */
-@media screen and (max-width: 600px) {
+/* ==========================================================================
+   بخش دوم: اصلاح چیدمان پروفایل‌ها (کد قبلی شما)
+   ========================================================================== */
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: start;
+  margin-top: 20px;
+}
+
+.profile-grid .profile-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.profile-grid img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* اصلاح برای موبایل */
+@include media-query($on-palm) {
     .menu {
-        gap: 15px;
-        justify-content: center;
+        gap: 10px;
+        font-size: 0.9em;
     }
 }
