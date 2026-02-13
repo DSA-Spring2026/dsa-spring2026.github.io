@@ -8,124 +8,84 @@ $header-background-invert: 0%;
 
 // Our variables
 $base-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-$base-font-size:   .95em;
-$small-font-size:  $base-font-size * 0.875;
+$base-font-size:   .95em;
+$small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
-$spacing-unit:     30px;
+$spacing-unit:     30px;
 
-$text-color:       #111;
+$text-color:       #111;
 $background-color: #fdfdfd;
-$brand-color:      $primary-color;
-$clemson-purple:      $header-color;
-$clemson-orange:      $accent-color;
+$brand-color:      $primary-color;
+// $gameday-sky: #109dc0;
+$clemson-purple:      $header-color;
+$clemson-orange:      $accent-color;
 
-$grey-color:       #828282;
+
+$grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+$grey-color-dark:  darken($grey-color, 25%);
+
 
 // Width of the content area
-$content-width:    950px;
-$on-palm:          600px;
-$on-laptop:        950px;
+$content-width:    950px;
 
+$on-palm:          600px;
+$on-laptop:        950px;
+
+
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
 @mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+    @media screen and (max-width: $device) {
+        @content;
+    }
 }
+
+
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "header",
-        "mobile-header",
-        "base",
-        "layout",
-        "syntax-highlighting",
-        "fancy-image"
+        "header",
+	    "mobile-header",
+        "base",
+        "layout",
+        "syntax-highlighting",
+	    "fancy-image"
 ;
 
-/* ==========================================================================
-   بخش اول: وسط‌چین کردن قطعی هدر و منو
-   ========================================================================== */
 
-// ۱. مجبور کردن کل هدر به چیدمان عمودی و مرکزی
-.site-header .wrapper {
-    display: flex !important;
-    flex-direction: column !important; 
-    align-items: center !important;    
-    text-align: center !important;
-    max-width: $content-width;
-    margin: 0 auto;
-}
-
-// ۲. تنظیمات لوگو و عنوان (آزاد کردن از حالت شناور)
-.site-title {
-    float: none !important;
-    margin: 0 0 15px 0 !important;
-    display: inline-block !important;
-}
-
-// ۳. تنظیمات اختصاصی کلاس .menu که فرستادید
-.menu {
-    float: none !important;
-    display: flex !important;
-    justify-content: center !important;
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 auto !important;
-    flex-wrap: wrap !important;
-    gap: 20px; /* فاصله بین آیتم‌های منو */
-}
-
-.menu li {
-    float: none !important;
-    display: inline-block !important;
-    margin: 0 !important;
-}
-
-.menu li a {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px;
-    text-decoration: none !important;
-    padding: 5px 10px;
-}
-
-/* ==========================================================================
-   بخش دوم: اصلاح چیدمان پروفایل‌ها (کد قبلی شما)
-   ========================================================================== */
+/* --- اضافه شده برای اصلاح چیدمان پروفایل‌ها --- */
 
 .profile-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 30px;
-  justify-items: center;
-  align-items: start;
-  margin-top: 20px;
+  display: grid;
+  /* این خط باعث می‌شود تعداد ستون‌ها بر اساس عرض صفحه تنظیم شود */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px; /* فاصله بین آیتم‌ها */
+  justify-items: center; /* وسط‌چین کردن محتوا */
+  align-items: start; /* تراز کردن از بالا (جلوگیری از گیر کردن) */
+  margin-top: 20px;
 }
 
 .profile-grid .profile-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .profile-grid img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-/* اصلاح برای موبایل */
-@include media-query($on-palm) {
-    .menu {
-        gap: 10px;
-        font-size: 0.9em;
-    }
+  width: 150px;       /* عرض ثابت */
+  height: 150px;      /* ارتفاع ثابت (بسیار مهم برای نظم) */
+  object-fit: cover;  /* جلوگیری از دفرمه شدن عکس */
+  border-radius: 50%; /* اگر می‌خواهید عکس‌ها گرد باشند */
+  margin-bottom: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* سایه ملایم */
 }
