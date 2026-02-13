@@ -17,40 +17,45 @@ $spacing-unit:     30px;
 $text-color:       #111;
 $background-color: #fdfdfd;
 $brand-color:      $primary-color;
-$clemson-purple:   $header-color;
-$clemson-orange:   $accent-color;
+// $gameday-sky: #109dc0;
+$clemson-purple:      $header-color;
+$clemson-orange:      $accent-color;
+
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 
+
 // Width of the content area
 $content-width:    950px;
+
 $on-palm:          600px;
 $on-laptop:        950px;
 
-// Media query mixin
+
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
 @mixin media-query($device) {
     @media screen and (max-width: $device) {
         @content;
     }
 }
 
-// Import partials (پاک‌سازی شده برای رفع خطای بیلد)
-@import "header";
-@import "mobile-header";
-@import "base";
-@import "layout";
-@import "syntax-highlighting";
-@import "fancy-image";
 
-/* --- اضافه شده برای اصلاح چیدمان پروفایل‌ها --- */
 
-.profile-grid img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "header",
+	    "mobile-header",
+        "base",
+        "layout",
+        "syntax-highlighting",
+	    "fancy-image"
+;
