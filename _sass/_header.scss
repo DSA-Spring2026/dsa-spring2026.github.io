@@ -1,5 +1,5 @@
 /**
- * Site header - Desktop Version Only
+ * Site header
  */
 
 .site-header {
@@ -15,26 +15,23 @@
     filter: invert($header-background-invert);
 }
 
-/* اعمال تغییرات فقط برای نمایشگرهای بزرگ (Desktop) */
+/* --- تنظیمات دسکتاپ (فقط برای نمایشگرهای بزرگ) --- */
 @media screen and (min-width: 601px) {
-
     .site-header .wrapper {
         padding-top: 20px;
         display: flex !important;
-        flex-direction: column !important; /* چیدمان ستونی: لوگو بالا، منو پایین */
-        align-items: center !important;    /* وسط‌چین کردن افقی */
+        flex-direction: column !important; 
+        align-items: center !important;    
         text-align: center !important;
-        position: relative;
         float: none !important;
         margin: 0 auto !important;
     }
 
-    /* تنظیم لوگو و عنوان سایت */
     .site-title, .site-title a {
         font-size: 26px;
         letter-spacing: -1px;
         margin-bottom: 15px !important;
-        float: none !important; /* حذف شناوری به چپ */
+        float: none !important;
         display: inline-block !important;
         font-weight: 500;
         font-family: 'Titillium Web', sans-serif;
@@ -44,23 +41,19 @@
         &:hover { text-decoration: none; }
     }
 
-    /* تنظیم بخش ناوبری اصلی */
     .site-nav {
-        float: none !important; /* حذف شناوری به راست */
+        float: none !important; 
         width: 100% !important;
         margin: 0 auto !important;
-        line-height: normal !important;
         display: block !important;
 
-        /* تنظیم لیست منو */
         .menu {
             display: flex !important;
-            justify-content: center !important; /* قرار دادن آیتم‌ها در مرکز */
+            justify-content: center !important; 
             flex-wrap: wrap !important;
             padding: 0 !important;
             margin: 0 !important;
             list-style: none !important;
-            text-align: center !important;
             text-transform: uppercase;
             font-family: 'Titillium Web', sans-serif;
             font-size: 85%;
@@ -68,11 +61,10 @@
             letter-spacing: 1px;
         }
 
-        /* آیتم‌های داخل منو */
         .menu > li {
             border-bottom: 3px solid transparent;
             display: inline-block !important;
-            margin: 0 15px !important; /* فاصله بین گزینه‌ها */
+            margin: 0 15px !important; 
             padding: 0 0 5px 0;
             position: relative;
             float: none !important;
@@ -87,15 +79,14 @@
         }
     }
 
-    /* تنظیم زیرمنوها برای حالت وسط‌چین */
+    /* تنظیم زیرمنوها */
     .sub-menu {
-        border: 3px solid transparent;
         box-shadow: 0 2px 2px rgba(0,0,0,0.4);
         display: none;
         position: absolute;
         top: 100%;
         left: 50%;
-        transform: translateX(-50%); /* تراز کردن زیرمنو نسبت به مرکز والد */
+        transform: translateX(-50%);
         background: #ffffff;
         min-width: 200px;
         z-index: 999;
@@ -103,80 +94,38 @@
         
         li {
             display: block;
-            margin: 0;
             text-align: left;
             a {
                 color: $title-color !important;
                 padding: 8px 15px;
-                font-weight: normal;
                 &:hover { color: $clemson-purple !important; }
             }
         }
     }
-
-    .site-nav li:hover > .sub-menu {
-        display: block;
-    }
+    .site-nav li:hover > .sub-menu { display: block; }
 }
 
-/* استایل‌های عمومی متن هدر */
+/* --- تنظیمات عمومی --- */
 .schoolname { color: $header-text-color; }
 .coursesemeter { color: $header-text-color; opacity: 0.9; }
+.site-nav h1 { position: absolute; left: -999em; }
 
-/* پنهان کردن عنوان پنهان ناوبری */
-.site-nav h1 {
-    position: absolute;
-    left: -999em;
-}
-
-.site-nav {
-    float: right;
-    line-height: 40px;
-
-
-    .menu-icon {
-        display: none;
-    }
-
-    .page-link {
-        color: $header-text-color;
-    background: $clemson-purple;
-        line-height: $base-line-height;
-
-        // Gaps between nav items, but not on the first one
-        &:not(:first-child) {
-            margin-left: 20px;
-        }
-    }
-
-
-
-    @include media-query($on-palm) {
+/* --- تنظیمات موبایل (فقط برای نمایشگرهای کوچک) --- */
+@include media-query($on-palm) {
+    .site-nav {
         position: absolute;
         top: 9px;
         right: 30px;
         background-color: $background-color;
         border: 1px solid $grey-color-light;
         border-radius: 5px;
-        text-align: right;
 
         .menu-icon {
             display: block;
             float: right;
             width: 36px;
-            height: 26px;
-            line-height: 0;
             padding-top: 10px;
             text-align: center;
-
-            > svg {
-                width: 18px;
-                height: 15px;
-
-                path {
-                    fill: $grey-color-dark;
-                }
-            }
         }
 
         .trigger {
@@ -192,17 +141,8 @@
         .page-link {
             display: block;
             padding: 5px 10px;
+            color: $header-text-color;
+            background: $clemson-purple;
         }
     }
 }
-
-.schoolname {
-    color: $header-text-color;
-}
-
-.coursesemeter {
-    color: $header-text-color;
-    opacity: 0.9;
-}
-
-
