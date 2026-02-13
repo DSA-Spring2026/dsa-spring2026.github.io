@@ -27,18 +27,26 @@
         margin: 0 auto !important;
     }
 
-    .site-title, .site-title a {
+    // جلوگیری از تکرار: فقط اولین تگ عنوان را نشان بده
+    .site-title {
+        display: none; // ابتدا همه را مخفی کن
+    }
+    
+    .site-header .wrapper > .site-title:first-of-type {
+        display: inline-block !important; // فقط اولین لوگو را نشان بده
         font-size: 26px;
         letter-spacing: -1px;
         margin-bottom: 15px !important;
         float: none !important;
-        display: inline-block !important;
         font-weight: 500;
         font-family: 'Titillium Web', sans-serif;
         color: $header-text-color;
         
-        &:visited { color: $header-text-color; }
-        &:hover { text-decoration: none; }
+        a {
+            color: $header-text-color;
+            &:visited { color: $header-text-color; }
+            &:hover { text-decoration: none; }
+        }
     }
 
     .site-nav {
@@ -77,6 +85,11 @@
             color: $header-text-color;
             text-decoration: none;
         }
+
+        // مخفی کردن آیکون همبرگری در دسکتاپ که جای منو را نگیرد
+        .menu-icon {
+            display: none !important;
+        }
     }
 
     /* تنظیم زیرمنوها */
@@ -106,11 +119,11 @@
 }
 
 /* --- تنظیمات عمومی --- */
-.schoolname { color: $header-text-color; }
-.coursesemeter { color: $header-text-color; opacity: 0.9; }
+.schoolname { color: $header-text-color; display: block; }
+.coursesemeter { color: $header-text-color; opacity: 0.9; display: block; }
 .site-nav h1 { position: absolute; left: -999em; }
 
-/* --- تنظیمات موبایل (فقط برای نمایشگرهای کوچک) --- */
+/* --- تنظیمات موبایل --- */
 @include media-query($on-palm) {
     .site-nav {
         position: absolute;
