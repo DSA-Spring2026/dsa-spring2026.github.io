@@ -227,54 +227,64 @@ z-index:999;
 }
 
 /* ===========================================
-   FINAL ADJUSTMENT — EXACTLY LIKE THE SAMPLE
+   FINAL REFINEMENT: BIGGER LOGO, TIGHTER FOOTER
    =========================================== */
 @media (min-width: 900px) {
 
   .site-header {
-    min-height: 180px; /* افزایش ارتفاع کل هدر */
-    display: block; 
-    padding: 30px 0; /* فاصله از بالا و پایین */
+    /* min-height را حذف کردم تا ارتفاع خودکار تنظیم شود */
+    display: block;
+    /* پدینگ بالا 25px و پدینگ پایین فقط 15px */
+    /* این باعث می‌شود هدر سریعاً زیر آیکون‌ها تمام شود */
+    padding: 25px 0 15px 0;
   }
 
   .site-header .wrapper {
     display: flex;
-    flex-direction: column; /* چیدمان عمودی: لوگو بالا، منو پایین */
-    align-items: flex-start; /* تراز کردن همه چیز از سمت چپ */
+    flex-direction: column;
+    align-items: flex-start;
     padding: 0 40px;
     position: relative;
   }
 
-  /* تنظیمات لوگو و عنوان */
+  /* --- بخش لوگو و عنوان --- */
   .site-header .wrapper > table {
     float: none !important;
-    margin-bottom: 30px; /* فاصله بین عنوان و منو */
+    /* فاصله بین بخش بالا و منوی پایین را کمی کمتر کردم */
+    margin-bottom: 20px;
     border-collapse: collapse;
   }
 
+  /* تغییر 1: بزرگ‌تر کردن لوگو */
   .site-header .wrapper > table img {
-    max-height: 95px; /* بزرگ‌تر کردن لوگو مطابق عکس */
+    /* ارتفاع را از 95px به 115px افزایش دادم */
+    max-height: 115px;
     width: auto;
     display: block;
+    /* اگر نیاز بود لوگو کمی پایین‌تر بیاید، margin-top بدهید */
+    /* margin-top: 10px; */
   }
 
-  /* تنظیمات منو */
+  /* --- بخش منو --- */
   .site-nav {
     position: static !important;
     transform: none !important;
     margin-top: 0;
-    /* خط جداکننده اینجا حذف شد */
-    border-top: none !important; 
+    border-top: none !important;
     padding-top: 0;
     width: auto;
+    /* اطمینان از اینکه خود منو فاصله اضافی در پایین ایجاد نمی‌کند */
+    margin-bottom: 0;
   }
 
   .site-nav ul {
     display: flex !important;
-    gap: 45px; /* فاصله بازتر بین گزینه‌های منو */
+    /* فاصله آیتم‌ها را کمی تنظیم کردم تا زیباتر شود */
+    gap: 40px;
     margin: 0 !important;
     padding: 0 !important;
     list-style: none;
+    align-items: center; /* تراز عمودی آیکون و متن */
   }
 
   .site-nav .menu > li {
@@ -283,17 +293,18 @@ z-index:999;
   }
 
   .site-nav a {
-    font-size: 17px;
-    font-weight: 600;
+    font-size: 16px; /* سایز فونت کمی متعادل‌تر */
+    font-weight: 700; /* ضخامت بیشتر شبیه الگو */
     text-transform: uppercase;
     display: flex;
     align-items: center;
-    gap: 10px; /* فاصله بین آیکون و متن منو */
-    color: #ffffff; /* یا هر رنگی که برای متن در نظر داری */
+    gap: 10px;
+    color: #ffffff; /* رنگ سفید برای متن منو */
+    letter-spacing: 0.5px;
   }
 
   /* استایل آیکون‌های داخل منو */
   .site-nav a i, .site-nav a svg {
-    font-size: 20px; /* کمی بزرگتر برای وضوح بیشتر */
+    font-size: 18px; /* سایز آیکون‌ها */
   }
 }
