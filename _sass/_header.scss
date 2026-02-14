@@ -227,81 +227,82 @@ z-index:999;
 }
 
 /* ===========================================
-   FINAL TWEAK: PERFECT ALIGNMENT & BIG LOGO
+   FINAL REFINEMENT: PERFECT LEFT ALIGNMENT
    =========================================== */
 @media (min-width: 900px) {
 
   .site-header {
     display: block;
-    /* کاهش پدینگ پایین برای چسبیدن لبه هدر به زیر آیکون‌ها */
-    padding: 25px 0 8px 0; 
+    padding: 25px 0 5px 0; /* فشرده‌تر شدن هدر */
     min-height: auto;
   }
 
   .site-header .wrapper {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* تراز از لبه سمت چپ */
+    align-items: flex-start !important; /* اجبار به تراز چپ */
     padding: 0 40px;
-    position: relative;
+    max-width: 100%; /* اطمینان از فضای کافی */
   }
 
-  /* تنظیمات لوگو - بزرگ‌تر شد */
+  /* تنظیمات لوگو - بزرگ و تراز چپ */
   .site-header .wrapper > table {
     float: none !important;
-    margin-bottom: 25px; 
+    margin-left: 0 !important;
+    margin-bottom: 20px;
     border-collapse: collapse;
-    margin-left: 0 !important; /* اطمینان از چسبیدن جدول به چپ */
   }
 
   .site-header .wrapper > table img {
-    max-height: 130px; /* لوگو را باز هم بزرگ‌تر کردم */
+    max-height: 140px; /* لوگوی بزرگ طبق الگو */
     width: auto;
     display: block;
   }
 
-  /* تنظیمات دقیق منو برای تراز شدن با لوگو */
+  /* اصلاح اساسی منو برای حذف فواصل مزاحم */
   .site-nav {
+    float: none !important; /* حذف شناوری به راست */
+    text-align: left !important; /* اجبار به تراز چپ */
     position: static !important;
-    transform: none !important;
-    margin-top: 0;
+    margin: 0 !important;
     padding: 0 !important;
-    margin-left: 0 !important;
     width: 100%;
   }
 
   .site-nav ul {
+    float: none !important; /* حذف شناوری لیست به راست */
     display: flex !important;
+    justify-content: flex-start !important; /* شروع آیتم‌ها از ابتدای سمت چپ */
     gap: 35px;
     margin: 0 !important;
-    padding: 0 !important; /* حذف هرگونه پدینگ داخلی لیست */
-    list-style: none;
-    justify-content: flex-start;
+    padding: 0 !important;
+    text-align: left !important;
   }
 
   .site-nav .menu > li {
-    margin: 0 !important; /* حذف فاصله همه آیتم‌ها */
+    margin: 0 !important;
     padding: 0 !important;
+    border: none !important;
   }
 
-  /* رفع مشکل جلو بودن Home */
+  /* حذف حاشیه اضافی اولین آیتم (HOME) */
   .site-nav .menu > li:first-child {
-    margin-left: 0 !important; 
+    margin-left: 0 !important;
   }
 
   .site-nav a {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 700;
     text-transform: uppercase;
     display: flex;
     align-items: center;
     gap: 8px;
     color: #ffffff;
-    padding-left: 0 !important; /* حذف پدینگ داخلی لینک اول */
+    padding: 0 5px 0 0 !important; /* حذف پدینگ سمت چپ لینک */
   }
 
-  /* سایز آیکون‌ها */
+  /* تنظیم سایز آیکون‌ها */
   .site-nav a i, .site-nav a svg {
-    font-size: 20px;
+    font-size: 22px;
   }
 }
