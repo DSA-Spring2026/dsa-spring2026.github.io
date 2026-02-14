@@ -239,12 +239,13 @@ z-index:999;
 
   .site-header .wrapper {
     display: flex;
-    flex-direction: row !important; /* ردیفی کردن بجای ستونی */
+    flex-direction: row !important;
     align-items: center !important;
-    justify-content: space-between !important;
+    justify-content: flex-start !important; /* شروع از چپ */
     padding: 0 40px;
     max-width: 1400px;
     margin: 0 auto;
+    position: relative;
   }
 
   /* لوگو و اطلاعات دانشگاه - چپ */
@@ -252,7 +253,7 @@ z-index:999;
     float: none !important;
     margin: 0 !important;
     border-collapse: collapse;
-    flex-shrink: 0; /* جلوگیری از فشرده شدن */
+    flex-shrink: 0;
   }
 
   .site-header .wrapper > table img {
@@ -266,49 +267,55 @@ z-index:999;
     float: none !important;
     position: absolute !important;
     left: 50% !important;
-    transform: translateX(-50%) !important; /* دقیقاً وسط */
+    transform: translateX(-50%) !important;
     text-align: center !important;
     margin: 0 !important;
     padding: 0 !important;
     width: auto;
   }
 
-  .site-nav ul.menu {
+  /* استایل‌های منو طبق سایت نمونه */
+  ul.menu {
     display: flex !important;
-    justify-content: center !important;
-    gap: 0 !important; /* حذف gap چون خودتون margin دارید */
+    justify-content: center !important; /* وسط‌چین کردن آیتم‌ها */
+    list-style: none !important;
+    padding: 0 !important;
     margin: 0 !important;
-    padding: 0 !important;
-    list-style: none;
   }
 
-  .site-nav .menu > li {
-    margin: 0 60px 0 0 !important; /* طبق کد شما */
-    padding: 0 !important;
-    border: none !important;
+  ul.menu li {
+    margin: 0 60px 0 0 !important; /* فاصله 60px بین آیتم‌ها */
   }
 
-  .site-nav .menu > li:last-child {
+  ul.menu li:last-child {
     margin-right: 0 !important; /* حذف فاصله از آخرین آیتم */
   }
 
-  .site-nav a {
-    font-size: 17px;
-    font-weight: 700;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #ffffff;
-    text-decoration: none;
+  ul.menu li a {
+    text-decoration: none !important;
+    color: #ffffff !important; /* رنگ سفید برای هدر بنفش */
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    transition: color 0.2s, opacity 0.2s !important;
+    text-transform: uppercase !important;
+    display: flex !important;
+    align-items: center !important;
   }
 
-  .site-nav a i, .site-nav a svg {
-    font-size: 22px;
-    margin-right: 8px;
+  ul.menu li a:hover {
+    opacity: 0.8 !important;
   }
 
-  .site-nav a:hover {
-    opacity: 0.8;
+  ul.menu li a i,
+  ul.menu li a svg {
+    margin-right: 8px !important;
+    font-size: 22px !important;
+  }
+
+  /* حذف استایل‌های اضافی که با طرح تداخل دارند */
+  .site-nav .menu > li {
+    border: none !important;
+    height: auto !important;
+    padding: 0 !important;
   }
 }
