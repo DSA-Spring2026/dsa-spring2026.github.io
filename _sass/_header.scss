@@ -232,7 +232,7 @@ z-index:999;
 @media (min-width: 900px) {
 
   .site-header {
-    min-height: 130px;
+    min-height: 110px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -242,59 +242,47 @@ z-index:999;
   .site-header .wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* لوگو را سمت چپ نگه می‌دارد */
+    justify-content: space-between;
     width: 100%;
-    height: 100%;
-    padding: 0 40px; /* کمی فاصله از کناره‌های صفحه */
-    position: relative; /* حیاتی برای وسط‌چین کردن منو */
+    padding: 0 40px;
+    position: relative;
   }
 
-  /* --- تنظیمات لوگو (سمت چپ) --- */
-  .site-header .wrapper > table,
-  .site-title {
+  /* لوگو سمت چپ */
+  .site-header .wrapper > table {
     float: none !important;
     display: flex;
     align-items: center;
-    z-index: 10; /* مطمئن می‌شویم لوگو زیر منو نرود */
+    z-index: 10;
   }
 
-  /* --- تنظیمات منو (دقیقاً وسط و کمی پایین) --- */
+  /* منو وسط */
   .site-nav {
-    float: none !important;
-    
-    /* جادوی وسط‌چین کردن مطلق */
     position: absolute;
     left: 50%;
-    transform: translateX(-50%); /* دقیقاً مرکز صفحه فیکس می‌شود */
-    
-    /* تنظیم ارتفاع و پایین آوردن */
-    top: 50%; /* شروع از وسط عمودی */
-    margin-top: 25px; /* <<--- این عدد را زیاد کن تا منو پایین‌تر بیاید */
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transform: translateX(-50%);
+    top: 55%; /* کمی پایین‌تر مثل algo-spring2026 */
+    margin-top: 0;
     z-index: 20;
   }
 
   .site-nav ul {
     display: flex !important;
-    align-items: center;
-    gap: 30px; /* فاصله بین کلمات منو */
+    gap: 35px; /* فاصله بین آیتم‌ها */
     margin: 0 !important;
     padding: 0 !important;
     list-style: none;
   }
 
   .site-nav .menu > li {
-    display: block;
     margin: 0 !important;
     padding: 0 !important;
     border: none;
   }
 
   .site-nav a {
-    display: block;
-    line-height: normal;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: none;
   }
 }
