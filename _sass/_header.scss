@@ -233,61 +233,59 @@ z-index:999;
 
   .site-header {
     display: block;
-    padding: 25px 0 5px 0; /* فشرده‌تر شدن هدر */
+    padding: 25px 0 15px 0;
     min-height: auto;
   }
 
   .site-header .wrapper {
     display: flex;
     flex-direction: column;
-    align-items: flex-start !important; /* اجبار به تراز چپ */
-    padding: 0 40px;
-    max-width: 100%; /* اطمینان از فضای کافی */
+    /* این بخش همه چیز را وسط‌چین می‌کند */
+    align-items: center !important; 
+    justify-content: center !important;
+    padding: 0 20px;
+    max-width: 1200px; /* یا 100% بسته به تمایل شما */
+    margin: 0 auto; /* مرکز قرار دادن خودِ کانتینر */
   }
 
-  /* تنظیمات لوگو - بزرگ و تراز چپ */
+  /* تنظیمات لوگو - وسط‌چین */
   .site-header .wrapper > table {
     float: none !important;
-    margin-left: 0 !important;
-    margin-bottom: 20px;
+    margin: 0 auto 25px auto !important; /* مارجین اتوماتیک برای وسط قرار گرفتن */
     border-collapse: collapse;
   }
 
   .site-header .wrapper > table img {
-    max-height: 140px; /* لوگوی بزرگ طبق الگو */
+    max-height: 140px; 
     width: auto;
     display: block;
   }
 
-  /* اصلاح اساسی منو برای حذف فواصل مزاحم */
+  /* تنظیمات منو - وسط‌چین */
   .site-nav {
-    float: none !important; /* حذف شناوری به راست */
-    text-align: left !important; /* اجبار به تراز چپ */
+    float: none !important;
+    text-align: center !important;
     position: static !important;
     margin: 0 !important;
     padding: 0 !important;
-    width: 100%;
+    width: auto;
   }
 
   .site-nav ul {
-    float: none !important; /* حذف شناوری لیست به راست */
+    float: none !important;
     display: flex !important;
-    justify-content: flex-start !important; /* شروع آیتم‌ها از ابتدای سمت چپ */
+    /* آیتم‌های منو را در مرکز کانتینر منو قرار می‌دهد */
+    justify-content: center !important; 
     gap: 35px;
     margin: 0 !important;
     padding: 0 !important;
-    text-align: left !important;
   }
 
   .site-nav .menu > li {
     margin: 0 !important;
     padding: 0 !important;
     border: none !important;
-  }
-
-  /* حذف حاشیه اضافی اولین آیتم (HOME) */
-  .site-nav .menu > li:first-child {
-    margin-left: 0 !important;
+    display: inline-block;
   }
 
   .site-nav a {
@@ -298,7 +296,6 @@ z-index:999;
     align-items: center;
     gap: 8px;
     color: #ffffff;
-    padding: 0 5px 0 0 !important; /* حذف پدینگ سمت چپ لینک */
   }
 
   /* تنظیم سایز آیکون‌ها */
