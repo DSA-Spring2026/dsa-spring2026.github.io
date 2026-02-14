@@ -1,5 +1,5 @@
 # Site settings
-course_name: "Data Structures "
+course_name: "Data Structures and Algorithms "
 course_description: "This course covers fundamental data structures, algorithmic techniques, and their applications in solving computational problems. Topics include arrays, linked lists, stacks, queues, trees, graphs, hashing, and complexity analysis."
 course_semester: "spring 2026"
 
@@ -11,7 +11,7 @@ schoolurl: "http://iaushiraz.ac.ir"
 twitter_username: ""
 
 address: |
-  Azad University, Shiraz Branch
+  Islamic Azad University, Shiraz Branch
   Shiraz, Iran
 
 # Google Analytics
