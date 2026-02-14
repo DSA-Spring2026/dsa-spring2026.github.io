@@ -239,56 +239,57 @@ z-index:999;
 
   .site-header .wrapper {
     display: flex;
-    flex-direction: column;
-    align-items: center !important; 
-    justify-content: center !important;
-    padding: 0 20px;
-    max-width: 1200px;
+    flex-direction: row !important; /* ردیفی کردن بجای ستونی */
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 40px;
+    max-width: 1400px;
     margin: 0 auto;
-    position: relative; /* برای پوزیشن لوگو */
   }
 
-  /* تنظیمات لوگو - چپ‌چین */
+  /* لوگو و اطلاعات دانشگاه - چپ */
   .site-header .wrapper > table {
     float: none !important;
-    position: absolute; /* خارج کردن از جریان عادی */
-    left: 40px; /* فاصله از چپ */
-    top: 0;
     margin: 0 !important;
     border-collapse: collapse;
+    flex-shrink: 0; /* جلوگیری از فشرده شدن */
   }
 
   .site-header .wrapper > table img {
-    max-height: 140px; 
+    max-height: 140px;
     width: auto;
     display: block;
   }
 
-  /* تنظیمات منو - وسط‌چین */
+  /* منو - وسط صفحه */
   .site-nav {
     float: none !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important; /* دقیقاً وسط */
     text-align: center !important;
-    position: static !important;
     margin: 0 !important;
     padding: 0 !important;
-    padding-top: 50px !important; /* فاصله از بالا برای جا دادن لوگو */
     width: auto;
   }
 
-  .site-nav ul {
-    float: none !important;
+  .site-nav ul.menu {
     display: flex !important;
-    justify-content: center !important; 
-    gap: 35px;
+    justify-content: center !important;
+    gap: 0 !important; /* حذف gap چون خودتون margin دارید */
     margin: 0 !important;
     padding: 0 !important;
+    list-style: none;
   }
 
   .site-nav .menu > li {
-    margin: 0 !important;
+    margin: 0 60px 0 0 !important; /* طبق کد شما */
     padding: 0 !important;
     border: none !important;
-    display: inline-block;
+  }
+
+  .site-nav .menu > li:last-child {
+    margin-right: 0 !important; /* حذف فاصله از آخرین آیتم */
   }
 
   .site-nav a {
@@ -299,9 +300,15 @@ z-index:999;
     align-items: center;
     gap: 8px;
     color: #ffffff;
+    text-decoration: none;
   }
 
   .site-nav a i, .site-nav a svg {
     font-size: 22px;
+    margin-right: 8px;
+  }
+
+  .site-nav a:hover {
+    opacity: 0.8;
   }
 }
