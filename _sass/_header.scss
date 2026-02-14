@@ -240,18 +240,21 @@ z-index:999;
   .site-header .wrapper {
     display: flex;
     flex-direction: column;
-    /* این بخش همه چیز را وسط‌چین می‌کند */
     align-items: center !important; 
     justify-content: center !important;
     padding: 0 20px;
-    max-width: 1200px; /* یا 100% بسته به تمایل شما */
-    margin: 0 auto; /* مرکز قرار دادن خودِ کانتینر */
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative; /* برای پوزیشن لوگو */
   }
 
-  /* تنظیمات لوگو - وسط‌چین */
+  /* تنظیمات لوگو - چپ‌چین */
   .site-header .wrapper > table {
     float: none !important;
-    margin: 0 auto 25px auto !important; /* مارجین اتوماتیک برای وسط قرار گرفتن */
+    position: absolute; /* خارج کردن از جریان عادی */
+    left: 40px; /* فاصله از چپ */
+    top: 0;
+    margin: 0 !important;
     border-collapse: collapse;
   }
 
@@ -268,13 +271,13 @@ z-index:999;
     position: static !important;
     margin: 0 !important;
     padding: 0 !important;
+    padding-top: 50px !important; /* فاصله از بالا برای جا دادن لوگو */
     width: auto;
   }
 
   .site-nav ul {
     float: none !important;
     display: flex !important;
-    /* آیتم‌های منو را در مرکز کانتینر منو قرار می‌دهد */
     justify-content: center !important; 
     gap: 35px;
     margin: 0 !important;
@@ -298,7 +301,6 @@ z-index:999;
     color: #ffffff;
   }
 
-  /* تنظیم سایز آیکون‌ها */
   .site-nav a i, .site-nav a svg {
     font-size: 22px;
   }
