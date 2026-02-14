@@ -227,72 +227,73 @@ z-index:999;
 }
 
 /* ===========================================
-   FIX: STACKED LAYOUT (LOGO TOP, NAV BOTTOM)
+   FINAL ADJUSTMENT — EXACTLY LIKE THE SAMPLE
    =========================================== */
 @media (min-width: 900px) {
 
   .site-header {
-    min-height: 160px; /* ارتفاع بیشتر برای جا شدن هر دو ردیف */
+    min-height: 180px; /* افزایش ارتفاع کل هدر */
     display: block; 
+    padding: 30px 0; /* فاصله از بالا و پایین */
   }
 
   .site-header .wrapper {
     display: flex;
-    flex-direction: column; /* المان‌ها را زیر هم می‌چیند */
-    align-items: flex-start; /* تراز کردن به سمت چپ */
-    padding: 20px 40px 10px 40px;
+    flex-direction: column; /* چیدمان عمودی: لوگو بالا، منو پایین */
+    align-items: flex-start; /* تراز کردن همه چیز از سمت چپ */
+    padding: 0 40px;
+    position: relative;
   }
 
-  /* ردیف بالا: لوگو و نام دانشگاه */
+  /* تنظیمات لوگو و عنوان */
   .site-header .wrapper > table {
     float: none !important;
-    margin-bottom: 25px; /* ایجاد فاصله بین عنوان و منوی پایین */
-    z-index: 10;
+    margin-bottom: 30px; /* فاصله بین عنوان و منو */
+    border-collapse: collapse;
   }
 
   .site-header .wrapper > table img {
-    max-height: 70px; /* سایز لوگو مطابق عکس الگو */
+    max-height: 95px; /* بزرگ‌تر کردن لوگو مطابق عکس */
     width: auto;
+    display: block;
   }
 
-  /* ردیف پایین: منوی ناوبری */
+  /* تنظیمات منو */
   .site-nav {
-    position: static !important; /* خارج کردن از حالت شناور روی متن */
+    position: static !important;
     transform: none !important;
-    width: 100%;
-    margin-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* خط جداکننده ظریف مثل الگو */
-    padding-top: 15px;
+    margin-top: 0;
+    /* خط جداکننده اینجا حذف شد */
+    border-top: none !important; 
+    padding-top: 0;
+    width: auto;
   }
 
   .site-nav ul {
     display: flex !important;
-    flex-direction: row;
-    justify-content: flex-start; /* چیدمان از سمت چپ */
-    gap: 40px; /* فاصله بین آیتم‌های منو */
+    gap: 45px; /* فاصله بازتر بین گزینه‌های منو */
     margin: 0 !important;
     padding: 0 !important;
+    list-style: none;
   }
 
   .site-nav .menu > li {
     margin: 0 !important;
     padding: 0 !important;
-    display: flex;
-    align-items: center;
   }
 
   .site-nav a {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 600;
-    text-transform: uppercase; /* تبدیل به حروف بزرگ مثل الگو */
+    text-transform: uppercase;
     display: flex;
     align-items: center;
-    gap: 8px; /* فاصله بین آیکون و متن */
+    gap: 10px; /* فاصله بین آیکون و متن منو */
+    color: #ffffff; /* یا هر رنگی که برای متن در نظر داری */
   }
 
-  /* تنظیم سایز آیکون‌های داخل منو */
-  .site-nav a svg, .site-nav a i {
-    width: 18px;
-    height: 18px;
+  /* استایل آیکون‌های داخل منو */
+  .site-nav a i, .site-nav a svg {
+    font-size: 20px; /* کمی بزرگتر برای وضوح بیشتر */
   }
 }
