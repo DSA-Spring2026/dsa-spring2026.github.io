@@ -227,73 +227,72 @@ z-index:999;
 }
 
 /* ===========================================
-   FINAL FIX — CENTERED MENU & ICON FIX
+   FIX: STACKED LAYOUT (LOGO TOP, NAV BOTTOM)
    =========================================== */
 @media (min-width: 900px) {
 
   .site-header {
-    min-height: 110px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    min-height: 160px; /* ارتفاع بیشتر برای جا شدن هر دو ردیف */
+    display: block; 
   }
 
   .site-header .wrapper {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 40px;
-    position: relative;
+    flex-direction: column; /* المان‌ها را زیر هم می‌چیند */
+    align-items: flex-start; /* تراز کردن به سمت چپ */
+    padding: 20px 40px 10px 40px;
   }
 
-  /* تنظیمات بخش سمت چپ (لوگو و اسم درس) */
+  /* ردیف بالا: لوگو و نام دانشگاه */
   .site-header .wrapper > table {
     float: none !important;
-    display: flex;
-    align-items: center; /* تراز عمودی وسط */
-    z-index: 30; /* بالاتر از منو باشد تا کلیک خور باشد */
-    position: relative; /* برای اطمینان از کارکرد z-index */
+    margin-bottom: 25px; /* ایجاد فاصله بین عنوان و منوی پایین */
+    z-index: 10;
   }
 
-  /* --- کد جدید برای کنترل سایز آیکون‌ها --- */
   .site-header .wrapper > table img {
-    max-height: 50px; /* ارتفاع آیکون را محدود می‌کند */
-    width: auto;      /* نسبت طول و عرض را حفظ می‌کند */
-    margin-right: 15px; /* فاصله بین آیکون و اسم درس */
-    display: block;
+    max-height: 70px; /* سایز لوگو مطابق عکس الگو */
+    width: auto;
   }
 
-  /* منو وسط */
+  /* ردیف پایین: منوی ناوبری */
   .site-nav {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 55%; 
-    margin-top: 0;
-    z-index: 20;
-    /* جلوگیری از شکستن خط منو */
-    white-space: nowrap; 
+    position: static !important; /* خارج کردن از حالت شناور روی متن */
+    transform: none !important;
+    width: 100%;
+    margin-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* خط جداکننده ظریف مثل الگو */
+    padding-top: 15px;
   }
 
   .site-nav ul {
     display: flex !important;
-    gap: 35px; 
+    flex-direction: row;
+    justify-content: flex-start; /* چیدمان از سمت چپ */
+    gap: 40px; /* فاصله بین آیتم‌های منو */
     margin: 0 !important;
     padding: 0 !important;
-    list-style: none;
   }
 
   .site-nav .menu > li {
     margin: 0 !important;
     padding: 0 !important;
-    border: none;
+    display: flex;
+    align-items: center;
   }
 
   .site-nav a {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
-    text-transform: none;
+    text-transform: uppercase; /* تبدیل به حروف بزرگ مثل الگو */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* فاصله بین آیکون و متن */
+  }
+
+  /* تنظیم سایز آیکون‌های داخل منو */
+  .site-nav a svg, .site-nav a i {
+    width: 18px;
+    height: 18px;
   }
 }
