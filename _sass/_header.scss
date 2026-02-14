@@ -227,95 +227,84 @@ z-index:999;
 }
 
 /* ===========================================
-   FINAL REFINEMENT: PERFECT LEFT ALIGNMENT
+   FINAL REFINEMENT: BIGGER LOGO, TIGHTER FOOTER
    =========================================== */
 @media (min-width: 900px) {
 
   .site-header {
+    /* min-height را حذف کردم تا ارتفاع خودکار تنظیم شود */
     display: block;
+    /* پدینگ بالا 25px و پدینگ پایین فقط 15px */
+    /* این باعث می‌شود هدر سریعاً زیر آیکون‌ها تمام شود */
     padding: 25px 0 15px 0;
-    min-height: auto;
   }
 
   .site-header .wrapper {
     display: flex;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: flex-start !important; /* شروع از چپ */
+    flex-direction: column;
+    align-items: flex-start;
     padding: 0 40px;
-    max-width: 1400px;
-    margin: 0 auto;
     position: relative;
   }
 
-  /* لوگو و اطلاعات دانشگاه - چپ */
+  /* --- بخش لوگو و عنوان --- */
   .site-header .wrapper > table {
     float: none !important;
-    margin: 0 !important;
+    /* فاصله بین بخش بالا و منوی پایین را کمی کمتر کردم */
+    margin-bottom: 20px;
     border-collapse: collapse;
-    flex-shrink: 0;
   }
 
+  /* تغییر 1: بزرگ‌تر کردن لوگو */
   .site-header .wrapper > table img {
-    max-height: 140px;
+    /* ارتفاع را از 95px به 115px افزایش دادم */
+    max-height: 115px;
     width: auto;
     display: block;
+    /* اگر نیاز بود لوگو کمی پایین‌تر بیاید، margin-top بدهید */
+    /* margin-top: 10px; */
   }
 
-  /* منو - وسط صفحه */
+  /* --- بخش منو --- */
   .site-nav {
-    float: none !important;
-    position: absolute !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    text-align: center !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    position: static !important;
+    transform: none !important;
+    margin-top: 0;
+    border-top: none !important;
+    padding-top: 0;
     width: auto;
+    /* اطمینان از اینکه خود منو فاصله اضافی در پایین ایجاد نمی‌کند */
+    margin-bottom: 0;
   }
 
-  /* استایل‌های منو طبق سایت نمونه */
-  ul.menu {
+  .site-nav ul {
     display: flex !important;
-    justify-content: center !important; /* وسط‌چین کردن آیتم‌ها */
-    list-style: none !important;
-    padding: 0 !important;
+    /* فاصله آیتم‌ها را کمی تنظیم کردم تا زیباتر شود */
+    gap: 40px;
     margin: 0 !important;
-  }
-
-  ul.menu li {
-    margin: 0 60px 0 0 !important; /* فاصله 60px بین آیتم‌ها */
-  }
-
-  ul.menu li:last-child {
-    margin-right: 0 !important; /* حذف فاصله از آخرین آیتم */
-  }
-
-  ul.menu li a {
-    text-decoration: none !important;
-    color: #ffffff !important; /* رنگ سفید برای هدر بنفش */
-    font-weight: 700 !important;
-    font-size: 1.1rem !important;
-    transition: color 0.2s, opacity 0.2s !important;
-    text-transform: uppercase !important;
-    display: flex !important;
-    align-items: center !important;
-  }
-
-  ul.menu li a:hover {
-    opacity: 0.8 !important;
-  }
-
-  ul.menu li a i,
-  ul.menu li a svg {
-    margin-right: 8px !important;
-    font-size: 22px !important;
-  }
-
-  /* حذف استایل‌های اضافی که با طرح تداخل دارند */
-  .site-nav .menu > li {
-    border: none !important;
-    height: auto !important;
     padding: 0 !important;
+    list-style: none;
+    align-items: center; /* تراز عمودی آیکون و متن */
+  }
+
+  .site-nav .menu > li {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .site-nav a {
+    font-size: 16px; /* سایز فونت کمی متعادل‌تر */
+    font-weight: 700; /* ضخامت بیشتر شبیه الگو */
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff; /* رنگ سفید برای متن منو */
+    letter-spacing: 0.5px;
+  }
+
+  /* استایل آیکون‌های داخل منو */
+  .site-nav a i, .site-nav a svg {
+    font-size: 18px; /* سایز آیکون‌ها */
   }
 }
