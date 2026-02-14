@@ -227,84 +227,81 @@ z-index:999;
 }
 
 /* ===========================================
-   FINAL REFINEMENT: BIGGER LOGO, TIGHTER FOOTER
+   FINAL TWEAK: PERFECT ALIGNMENT & BIG LOGO
    =========================================== */
 @media (min-width: 900px) {
 
   .site-header {
-    /* min-height را حذف کردم تا ارتفاع خودکار تنظیم شود */
     display: block;
-    /* پدینگ بالا 25px و پدینگ پایین فقط 15px */
-    /* این باعث می‌شود هدر سریعاً زیر آیکون‌ها تمام شود */
-    padding: 25px 0 15px 0;
+    /* کاهش پدینگ پایین برای چسبیدن لبه هدر به زیر آیکون‌ها */
+    padding: 25px 0 8px 0; 
+    min-height: auto;
   }
 
   .site-header .wrapper {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-start; /* تراز از لبه سمت چپ */
     padding: 0 40px;
     position: relative;
   }
 
-  /* --- بخش لوگو و عنوان --- */
+  /* تنظیمات لوگو - بزرگ‌تر شد */
   .site-header .wrapper > table {
     float: none !important;
-    /* فاصله بین بخش بالا و منوی پایین را کمی کمتر کردم */
-    margin-bottom: 20px;
+    margin-bottom: 25px; 
     border-collapse: collapse;
+    margin-left: 0 !important; /* اطمینان از چسبیدن جدول به چپ */
   }
 
-  /* تغییر 1: بزرگ‌تر کردن لوگو */
   .site-header .wrapper > table img {
-    /* ارتفاع را از 95px به 115px افزایش دادم */
-    max-height: 115px;
+    max-height: 130px; /* لوگو را باز هم بزرگ‌تر کردم */
     width: auto;
     display: block;
-    /* اگر نیاز بود لوگو کمی پایین‌تر بیاید، margin-top بدهید */
-    /* margin-top: 10px; */
   }
 
-  /* --- بخش منو --- */
+  /* تنظیمات دقیق منو برای تراز شدن با لوگو */
   .site-nav {
     position: static !important;
     transform: none !important;
     margin-top: 0;
-    border-top: none !important;
-    padding-top: 0;
-    width: auto;
-    /* اطمینان از اینکه خود منو فاصله اضافی در پایین ایجاد نمی‌کند */
-    margin-bottom: 0;
+    padding: 0 !important;
+    margin-left: 0 !important;
+    width: 100%;
   }
 
   .site-nav ul {
     display: flex !important;
-    /* فاصله آیتم‌ها را کمی تنظیم کردم تا زیباتر شود */
-    gap: 40px;
+    gap: 35px;
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 0 !important; /* حذف هرگونه پدینگ داخلی لیست */
     list-style: none;
-    align-items: center; /* تراز عمودی آیکون و متن */
+    justify-content: flex-start;
   }
 
   .site-nav .menu > li {
-    margin: 0 !important;
+    margin: 0 !important; /* حذف فاصله همه آیتم‌ها */
     padding: 0 !important;
   }
 
+  /* رفع مشکل جلو بودن Home */
+  .site-nav .menu > li:first-child {
+    margin-left: 0 !important; 
+  }
+
   .site-nav a {
-    font-size: 16px; /* سایز فونت کمی متعادل‌تر */
-    font-weight: 700; /* ضخامت بیشتر شبیه الگو */
+    font-size: 16px;
+    font-weight: 700;
     text-transform: uppercase;
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: #ffffff; /* رنگ سفید برای متن منو */
-    letter-spacing: 0.5px;
+    gap: 8px;
+    color: #ffffff;
+    padding-left: 0 !important; /* حذف پدینگ داخلی لینک اول */
   }
 
-  /* استایل آیکون‌های داخل منو */
+  /* سایز آیکون‌ها */
   .site-nav a i, .site-nav a svg {
-    font-size: 18px; /* سایز آیکون‌ها */
+    font-size: 20px;
   }
 }
