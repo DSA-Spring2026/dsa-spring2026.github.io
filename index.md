@@ -1,4 +1,4 @@
-# Data Structures – Spring 2026
+# Data Structures and Algorithms – Spring 2026
 
 Welcome to the official course website for Data Structures (DSA), offered at Azad University, Shiraz Branch.
 
