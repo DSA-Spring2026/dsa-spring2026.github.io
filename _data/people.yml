@@ -33,6 +33,10 @@ teaching_assistants:
     profile_pic: "/_images/pp/Heydari.jpg"
     webpage: "https://github.com/Dayancodebro"
 
+  - name: "Mehdi Torabi"
+    profile_pic: "Torabi.jpg"
+    webpage: "mailto:torabim404@gmail.com"
+  
   - name: "Abolfazl Tadrisi"
     profile_pic: ""
     webpage: ""
@@ -52,7 +56,3 @@ teaching_assistants:
   - name: "Armin Karimi"
     profile_pic: ""
     webpage: "https://www.linkedin.com/in/armin-karimiaa"
-
-  - name: "Mehdi Torabi"
-    profile_pic: ""
-    webpage: "mailto:torabim404@gmail.com"
