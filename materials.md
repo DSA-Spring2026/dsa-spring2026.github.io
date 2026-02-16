@@ -3,18 +3,39 @@ layout: page
 title: Materials
 permalink: /materials/
 ---
+{% include image.html url="/_images/screenshots/image.png.jpeg" width=175 align="right" %}
 
-{% include image.html url="/_images/cover2.jpg" width=175 align="right" %}
+## Hand-out
 
-## Book
+Data Structures & Algorithms (DSA) – Spring 2026 – Dr. Eskandari  
+[Download full textbook (PDF)](/static_files/presentations/DSA_spring2026.pdf)
 
-Alan Turing and Noam Chomsky: Very Famous Book
+---
+
+## Similar Courses
+* [Grokking Data Structures & Algorithms](https://www.ebooksworld.ir/post/index/949) – visual & simple guide with Python
+* [CS106B: Programming Abstractions](https://web.stanford.edu/class/archive/cs/cs106b/) – Stanford University
+* [CS61B: Data Structures (Berkeley)](https://sp21.datastructur.es/) – UC Berkeley
+* [6.006 Introduction to Algorithms (MIT)](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/) – MIT OpenCourseWare
+* [CS 225: Data Structures](https://courses.engr.illinois.edu/cs225/) – University of Illinois Urbana‑Champaign
+* [CS 240: Data Structures & Data Management](https://student.cs.uwaterloo.ca/~cs240/) – University of Waterloo
+* [CS 251: Data Structures and Algorithms](https://www.cs.purdue.edu/homes/ayg/CS251/) – Purdue University
+* [Data Structures (Oxford)](https://www.cs.ox.ac.uk/teaching/courses/2021-2022/datastructures/) – University of Oxford
+* [Algorithm Design (Kleinberg & Tardos) Slides](https://www.cs.princeton.edu/~wayne/kleinberg-tardos/) – Princeton University
+
+## Recommended Books & References
+
+1. **"Data Structures & Algorithm Analysis"** – Mark Allen Weiss  
+2. **"Algorithms"** – Robert Sedgewick & Kevin Wayne  
+3. **Online Judge Practice:**
+   - [LeetCode](https://leetcode.com/)
+   - [HackerRank](https://www.hackerrank.com/)
+   - [Codeforces](https://codeforces.com/)
+
+*More resources will be added during the semester.*
 
 ## Additional Course Materials
 
-* If you are not familiar with Python programming, use any online tutorial to get a handle of it.
-* [Material #1](http://www.example.com/): how a computer chess player thinks!
-* [Material #2](http://www.example.com/): how a computer chess player thinks!
-* [Material #3](http://www.example.com/): how a computer chess player thinks!
-* [Material #4](http://www.example.com/): how a computer chess player thinks!
-* [Material #5](http://www.example.com/): how a computer chess player thinks!
+* [Python for Beginners](https://docs.python.org/3/tutorial/) – Official Python tutorial  
+* [Visualgo](https://visualgo.net) – Data structure visualizations  
+* [GeeksforGeeks](https://geeksforgeeks.org) – DSA problems and solutions  
