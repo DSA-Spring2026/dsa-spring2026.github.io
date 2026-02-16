@@ -3,7 +3,7 @@ layout: page
 title: Materials
 permalink: /materials/
 ---
-{% include image.html url="/_images/screenshots/book.jpg" width=175 align="right" %}
+{% include image.html url="/_images/screenshots/book.jpg" width=175 align="right" style="margin-bottom:0;" %}
 
 ## Hand-out
 
