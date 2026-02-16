@@ -41,6 +41,10 @@ teaching_assistants:
     profile_pic: "/_images/pp/Ghorbani.jpg"
     webpage: "mailto:mryamgh1383@gmail.com"
     
+  - name: "Mohammad Reza Fasli"
+    profile_pic: "/_images/pp/Fasli.jpg"
+    webpage: "mailto:Mohammadrezafasli1234@gmail.com"
+    
   - name: "Abolfazl Tadrisi"
     profile_pic: ""
     webpage: ""
@@ -48,10 +52,6 @@ teaching_assistants:
   - name: "Fatemeh Keshavarz"
     profile_pic: ""
     webpage: "mailto:avakeshavarz1385@gmail.com"
-
-  - name: "Mohammad Reza Fasli"
-    profile_pic: ""
-    webpage: "mailto:Mohammadrezafasli1234@gmail.com"
 
   - name: "Armin Karimi"
     profile_pic: ""
