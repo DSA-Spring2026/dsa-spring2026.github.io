@@ -1,82 +1,98 @@
 @media only screen and (max-width: 600px) {
 
-.site-nav h1 {
-		border-bottom: 3px solid transparent;
-		cursor: pointer;
-		display: none; /* Standard. IE8+, Saf, FF3+ */
-		height: 23px;
-		left: auto;
-		margin-top: 10px;
-		position: static;
-		white-space: nowrap;
-	}
+  /* 1. بازنشانی ساختار هدر (خنثی کردن تغییرات دسکتاپ) */
+  .site-header .wrapper {
+    display: flex; /* استفاده از فلکس برای تراز کردن لوگو و دکمه منو */
+    flex-direction: row; /* در موبایل کنار هم باشند */
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px; /* پدینگ کمتر برای موبایل */
+  }
 
-.site-nav .menu {
-		border: 3px solid transparent;
-		border-top: 0;
-		/* bg and border colors set in header */
-		-moz-box-shadow: 0px 2px 2px rgba(0,0,0,0.8);
-		-webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.8);
-		box-shadow: 0px 2px 2px rgba(0,0,0,0.8);
-		/* Hide until activated */
-		display: block;
-		left: -3px;
-		min-width: 215px;
-/*		margin-top: 36px; */
-		padding: 4px 0;
-		position: relative;
-		right: -3px;
-		z-index: 999;
-	}
+  /* 2. کوچک کردن لوگو برای موبایل */
+  .site-header .wrapper > table img {
+    max-height: 50px; /* ارتفاع لوگو را در موبایل محدود می‌کنیم */
+    margin-bottom: 0; /* حذف مارجین اضافی دسکتاپ */
+  }
 
+  /* 3. تنظیم موقعیت دکمه منو */
+  .site-nav {
+    position: static; /* برگرداندن به حالت جریان عادی داخل فلکس */
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    float: none;
+  }
 
-.site-nav .menu.open {
-		display: block;
-	}
+  /* تریگر منو (آیکون همبرگری) */
+  .site-nav .menu-icon {
+    display: block; /* نمایش آیکون در موبایل */
+    cursor: pointer;
+  }
+  
+  .site-nav .menu-icon svg path {
+    fill: #ffffff; /* رنگ آیکون سفید (چون پس‌زمینه هدر بنفش است) */
+  }
 
-.site-nav .menu li {
-		display: block;
-		margin: 0;
-		color: $title-color;
-	}
+  /* 4. استایل منوی کشویی (Dropdown) */
+  .site-nav .trigger {
+    display: none; /* مخفی بودن پیش‌فرض */
+    position: absolute;
+    top: 100%; /* چسبیدن به پایین هدر */
+    left: 0;
+    right: 0;
+    background-color: #ffffff; /* پس‌زمینه سفید برای خوانایی */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* سایه نرم و مدرن */
+    z-index: 1000;
+    border-bottom: 4px solid $clemson-orange; /* نوار رنگی برند در پایین منو */
+  }
+  
+  /* وقتی روی منو کلیک شد (معمولاً با چک‌باکس یا JS هندل می‌شود) */
+  .site-nav:hover .trigger, 
+  .site-nav .trigger.open { 
+      display: block; 
+  }
 
-.site-nav ul.menu a {
-	background: #fff;
-	color: $title-color;
+  .site-nav .page-link {
+    display: block;
+    padding: 12px 20px;
+    color: $clemson-purple; /* متن بنفش روی زمینه سفید */
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px solid #eee; /* خط جداکننده ظریف */
+    text-transform: uppercase;
+    text-align: left;
+  }
 
-}
+  .site-nav .page-link:hover {
+    background-color: #f9f9f9;
+    color: $clemson-orange;
+  }
 
-.site-nav a,
-	.site-nav li.current-menu-item > a {
-		padding: 4px 10px;
-	}
+  /* حذف استایل‌های اضافی دسکتاپ از لینک‌ها */
+  .site-nav a {
+    margin-left: 0 !important;
+  }
 
-.site-nav .menu > li {
-		height: auto;
-		text-align: left;
-	}
+  /* 5. هندل کردن زیرمنوها در موبایل */
+  .site-nav .sub-menu {
+    display: block; /* در موبایل همیشه زیر آیتم مادر نمایش داده شود */
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    background-color: #f5f5f5; /* کمی تیره‌تر برای تمایز زیرمنو */
+    padding-left: 20px;
+  }
 
-.site-nav .sub-menu {
-		border: 0;
-		-moz-box-shadow: none; /* FF3.5+ */
-		-webkit-box-shadow: none; /* Saf3+, Chrome */
-		box-shadow: none; /* Standard. Opera 10.5, IE9 */
-		display: block;
-		font-family: 'Titillium Web', Helvetica, Arial, Verdana, sans-serif;
-		position: relative;
-		min-width: 215px;
-		max-width: 215px;
-		top: auto;
-		text-transform: uppercase;
-		right: auto;
-		width: auto;
-	}
-
-	.site-nav .sub-menu {
-		padding-left: 16px;
-	}
-	.site-nav .sub-menu li.current-menu-item > a {
-		border: 0;
-	}
-
+  .site-nav .sub-menu a {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #555;
+  }
 }
