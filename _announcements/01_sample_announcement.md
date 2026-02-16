@@ -1,4 +1,5 @@
 ---
-date: 2018-10-03T10:00:00+3:30
+title: "Welcome to Data Structures and Algorithms  Course"
+date: 2026-02-05
 ---
-Sample announcement, Please check out [here](/).
+**Welcome to Data Structures and Algorithms Design - Spring 2026!**
