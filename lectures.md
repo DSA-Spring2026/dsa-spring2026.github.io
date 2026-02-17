@@ -1,6 +1,6 @@
 ---
-layout: lectures
-title: Lectures
-permalink: /lectures/
+layout: Exercises
+title: Exercises
+permalink: /Exercises/
 ---
-You can download the lectures here. We will try to upload lectures prior to their corresponding classes.
+You can download the Exercises here. We will try to upload Exercises prior to their corresponding classes.
