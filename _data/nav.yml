@@ -9,12 +9,12 @@ items:
   name: Schedule
   icon_class: fas fa-calendar-alt
 
-- url: /Exercises/
-  name: Exercises
+- url: /lectures/
+  name: lectures
   icon_class: fas fa-book-reader
 
-- url: /assignments/
-  name: Assignments
+- url: /Exercises/
+  name: Exercises
   icon_class: fas fa-user-graduate
 
 - url: /materials/
