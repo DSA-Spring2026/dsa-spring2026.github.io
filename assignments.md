@@ -1,6 +1,6 @@
 ---
-layout: assignments
-title: Assignments
-permalink: /assignments/
+layout: Exercises
+title: Exercises
+permalink: /exercises/
 ---
-You can download the assignments here. Also check out each assignment page for any additional info.
+You can download the exercises here. Also check out each exercises page for any additional info.
