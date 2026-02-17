@@ -13,7 +13,7 @@ items:
   name: lectures
   icon_class: fas fa-book-reader
 
-- url: /Exercises/
+- url: /exercises/
   name: Exercises
   icon_class: fas fa-user-graduate
 
