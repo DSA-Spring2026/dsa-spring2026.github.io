@@ -1,5 +1,5 @@
 ---
-layout: Exercises
+layout: exercises
 title: Exercises
 permalink: /exercises/
 ---
