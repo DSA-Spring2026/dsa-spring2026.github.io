@@ -1,0 +1,29 @@
+---
+layout: page
+---
+
+{{ content }}
+<ul id="archive">
+{% for ex in site.exercises %}
+  <li class="archiveposturl" style="background: transparent">
+    <span>
+      <a href="{{ ex.url | prepend: site.baseurl }}">{{ ex.title }}</a>
+    </span>
+
+    <strong style="font-size:100%; font-family: 'Titillium Web', sans-serif; float:right">
+      {% if ex.pdf %}
+      <a title="Download exercises (pdf)" href="{{ ex.pdf | prepend: site.baseurl }}">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      {% endif %}
+
+      {% if ex.attachment %}
+      &nbsp;
+      <a title="Download attachments (zip)" href="{{ ex.attachment | prepend: site.baseurl }}">
+        <i class="fas fa-file-archive"></i>
+      </a>
+      {% endif %}
+    </strong>
+  </li>
+{% endfor %}
+</ul>
