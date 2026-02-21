@@ -20,7 +20,7 @@ Data Structures & Algorithms (DSA) – Spring 2026 – Dr. Eskandari
 * [CS 225: Data Structures](https://courses.engr.illinois.edu/cs225) – University of Illinois Urbana‑Champaign
 * [CS 240: Data Structures & Data Management](https://student.cs.uwaterloo.ca/~cs240) – University of Waterloo
 * [CS 251: Data Structures and Algorithms](https://www.cs.purdue.edu/homes/ayg/CS251) – Purdue University
-* [Data Structures (Oxford)](https://www.cs.ox.ac.uk/teaching/courses/2021-2022/datastructures/) – University of Oxford
+* [Data Structures (Oxford)](https://www.cs.ox.ac.uk/teaching/courses/2022-2023/algorithms/) – University of Oxford
 * [Algorithm Design (Kleinberg & Tardos) Slides](https://www.cs.princeton.edu/~wayne/kleinberg-tardos/) – Princeton University
 
 ## Recommended Books & References
