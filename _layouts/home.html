@@ -68,18 +68,31 @@ layout: default
 
         <!-- TAها -->
         <h2 class="role-title">Teaching Assistants</h2>
-        <div class="staff-row triple">
-            {% for ta in site.data.people.teaching_assistants %}
-            <div class="person">
-                <img src="{{ta.profile_pic | prepend: site.baseurl }}" class="image--cover">
-                {% if ta.webpage %}
-                <p><a href="{{ ta.webpage }}">{{ta.name}}</a></p>
-                {% else %}
-                <p>{{ta.name}}</p>
-                {% endif %}
-            </div>
-            {% endfor %}
-        </div>
 
+        <!-- ردیف اول: ۴ نفر -->
+        <div class="staff-row four">
+        {% for ta in site.data.people.teaching_assistants limit:4 %}
+        <div class="person">
+        <img src="{{ta.profile_pic | prepend: site.baseurl }}" class="image--cover">
+        {% if ta.webpage %}
+        <p><a href="{{ ta.webpage }}">{{ta.name}}</a></p>
+        {% else %}
+        <p>{{ta.name}}</p>
+        {% endif %}
     </div>
+    {% endfor %}
 </div>
+
+        <!-- ردیف دوم: بقیه (۵ نفر) -->
+        <div class="staff-row five">
+        {% for ta in site.data.people.teaching_assistants offset:4 %}
+        <div class="person">
+            <img src="{{ta.profile_pic | prepend: site.baseurl }}" class="image--cover">
+            {% if ta.webpage %}
+            <p><a href="{{ ta.webpage }}">{{ta.name}}</a></p>
+            {% else %}
+            <p>{{ta.name}}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
