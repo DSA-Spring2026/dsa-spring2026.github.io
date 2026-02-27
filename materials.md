@@ -8,7 +8,7 @@ permalink: /materials/
 ## Hand-out
 
 Data Structures & Algorithms (DSA) – Spring 2026 – Dr. Eskandari  
-[Download full textbook (PDF)](/static_files/presentations/DSA_spring2026.pdf)
+[Download full textbook (PDF)](https://my.files.ir/drive/s/zljs1uotDqVC65rJubm89qF1b63k3o)
 
 ---
 
